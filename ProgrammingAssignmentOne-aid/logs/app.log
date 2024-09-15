@@ -1,0 +1,6 @@
+11:50:52.062 [main] TRACE Logging - Hello this is a TRACE message.
+11:50:52.067 [main] DEBUG Logging - Hello this is a DEBUG message.
+11:50:52.068 [main] INFO  Logging - Hello this is an INFO message.
+11:50:52.068 [main] WARN  Logging - Hello this is an WARN message.
+11:50:52.070 [main] ERROR Logging - Hello this is an ERROR message.
+11:50:52.070 [main] FATAL Logging - Hello this is an FATAL message.

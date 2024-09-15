@@ -1,0 +1,31 @@
+Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+Superbus,Bus,12000,20,10000000,250,1,15,100
+Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+Honda Accord,Car,1550,3.3,26000,185,1,15,100
+Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
