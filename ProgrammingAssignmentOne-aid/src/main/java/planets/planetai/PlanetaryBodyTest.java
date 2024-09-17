@@ -5,11 +5,13 @@ public class PlanetaryBodyTest {
 
 public static void main(String[] args) {
 		
-		String DELIMITER = ",";
+		PlanetaryBodyReader reader = new PlanetaryBodyReader();
+	
+		final String DELIMITER = ",";
 		String FILE_LOCATION = "C:\\Users\\Lenovo ThinkPad T430\\eclipse-workspace\\ProgrammingAssignmentOne-aid\\planet_details.csv";
 		ArrayList<PlanetaryBody> list = null;
 		
-		list = PlanetaryBodyReader.readCSV(FILE_LOCATION, DELIMITER);
+		list = reader.readCSV(FILE_LOCATION, DELIMITER);
 		//list = PlanetaryBodyReader()
 		
 		
