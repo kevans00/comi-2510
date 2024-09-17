@@ -2,15 +2,14 @@ package planets.planetai;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-
 public class PlanetaryBodyReader {
 	
 	/**
 	 * Default constructor
 	 */
-	public PlanetaryBodyReader() {
-	}
+	public PlanetaryBodyReader() {}
 	
 	public ArrayList<PlanetaryBody> readCSV(String csvFile, String delimiter){
 		BufferedReader br = null;
@@ -41,7 +40,28 @@ public class PlanetaryBodyReader {
 						Double.parseDouble(tempArr[7]), 
 						Double.parseDouble(tempArr[8]), 
 						Double.parseDouble(tempArr[9]));
+				
+						list.add(detail);
+						}
+			br.close();
+		} catch (IOException ioe)
+		{
+			ioe.printStackTrace();
+		} finally
+		{
+			if (null != br)
+			{
+				try
+				{
+					br.close();
+				} catch (IOException ioe)
+				{
+					ioe.printStackTrace();
+				}
 			}
 		}
+		return list;
 	}
+	
 }
+
