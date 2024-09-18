@@ -4,7 +4,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class PlanetaryBodyReader {
+	
+	private static final Logger logger = LogManager.getLogger(PlanetaryBodyReader.class.getName());
+	
 	
 	/**
 	 * Default constructor
@@ -22,11 +28,13 @@ public class PlanetaryBodyReader {
 			br = new BufferedReader(fr);
 			String line = "";
 			String[] tempArr;
+			int counter = 0;
 			
 			line = br.readLine();
+			PlanetaryBodyReader.logger.debug("Header = " + line);
 			
 			while ((line = br.readLine()) != null) {
-				
+				PlanetaryBodyReader.logger.debug("Line = " + line);	
 				tempArr = line.split(delimiter);
 				
 				detail = new PlanetaryBody(
@@ -43,6 +51,8 @@ public class PlanetaryBodyReader {
 				
 						list.add(detail);
 						}
+			PlanetaryBodyReader.logger.debug("Detail = " + detail) ;
+			PlanetaryBodyReader.logger.debug("Line = " + line);
 			br.close();
 		} catch (IOException ioe)
 		{

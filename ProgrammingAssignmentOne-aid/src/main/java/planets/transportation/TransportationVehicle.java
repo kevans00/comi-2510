@@ -7,7 +7,7 @@ public class TransportationVehicle {
 	double volume;
 	double buildCost;
 	double maxSpeed;
-	int crew;
+	double crew;
 	double foodCost;
 	double salary;
 	
@@ -59,11 +59,11 @@ public class TransportationVehicle {
 		this.maxSpeed = maxSpeed;
 	}
 	
-	public int getCrew() {
+	public double getCrew() {
 		return crew;
 	}
 	
-	public void setCrew(int crew) {
+	public void setCrew(double crew) {
 		this.crew = crew;
 	}
 	
@@ -97,7 +97,7 @@ public class TransportationVehicle {
  */
 	public TransportationVehicle(String vehicleName, String vehicleClassification, 
 			double maxWeight, double volume, double buildCost, double maxSpeed, 
-			int crew, double foodCost, double salary) 
+			double crew, double foodCost, double salary) 
 	{
 		this.setVehicleName(vehicleName);
 		this.setVehicleClassification(vehicleClassification);
