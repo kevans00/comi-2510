@@ -1,11 +1,11 @@
 package planets.transportation;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.io.LineNumberReader;
 
 public class TransportationVehicleReader {
 
@@ -14,22 +14,24 @@ public class TransportationVehicleReader {
 	public TransportationVehicleReader() {}
 	
 	public ArrayList<TransportationVehicle> readCSV(String csvFile, String delimiter){
-		BufferedReader br = null;
 		ArrayList<TransportationVehicle> list = new ArrayList<TransportationVehicle>();
 		TransportationVehicle detail = null;
+		LineNumberReader ln = null;
 		
 		try {
 			File file = new File(csvFile);
+			//FileReader fr = new FileReader(file);
 			FileReader fr = new FileReader(file);
-			br = new BufferedReader(fr);
+						
+			ln = new LineNumberReader(fr);
+
 			String line = "";
 			String[] tempArr;
 			
-			line = br.readLine();
-			TransportationVehicleReader.logger.debug("Header = " + line);
-			
-			while ((line = br.readLine()) != null) {
-				TransportationVehicleReader.logger.debug("Line = " + line);	
+			line = ln.readLine();
+			TransportationVehicleReader.logger.debug("Header has line number " + ln.getLineNumber() + " has: " + line);
+			while ((line = ln.readLine()) != null) {
+				TransportationVehicleReader.logger.debug("Line number " + ln.getLineNumber() + " has: " + line);	
 				tempArr = line.split(delimiter);
 				
 				detail = new TransportationVehicle(
@@ -47,17 +49,17 @@ public class TransportationVehicleReader {
 						}
 			TransportationVehicleReader.logger.debug("Detail = " + detail) ;
 			TransportationVehicleReader.logger.debug("Line = " + line);
-			br.close();
+			ln.close();
 		} catch (IOException ioe)
 		{
 			ioe.printStackTrace();
 		} finally
 		{
-			if (null != br)
+			if (null != ln)
 			{
 				try
 				{
-					br.close();
+					ln.close();
 				} catch (IOException ioe)
 				{
 					ioe.printStackTrace();

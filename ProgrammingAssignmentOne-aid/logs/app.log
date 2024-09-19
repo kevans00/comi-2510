@@ -222,3 +222,820 @@
 23:05:55.980 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
 23:05:55.984 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
 23:05:55.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:16:46.969 [main] DEBUG planets.transportation.TransportationVehicleReader - Header = Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+23:16:46.976 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+23:16:46.981 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+23:16:46.982 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+23:16:46.982 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+23:16:46.983 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+23:16:46.983 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+23:16:46.983 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+23:16:46.984 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+23:16:46.984 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+23:16:46.985 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+23:16:46.986 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+23:16:46.986 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+23:16:46.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+23:16:46.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+23:16:46.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+23:16:46.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+23:16:46.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+23:16:46.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+23:16:46.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+23:16:46.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+23:16:46.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+23:16:46.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+23:16:46.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+23:16:46.990 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+23:16:46.990 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+23:16:46.990 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+23:16:46.991 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+23:16:46.991 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+23:16:46.991 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+23:16:46.992 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+23:16:46.993 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+23:16:46.994 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+23:16:46.995 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+23:16:46.995 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+23:16:46.996 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+23:16:46.996 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+23:16:46.996 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+23:16:46.997 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+23:16:46.998 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
+23:16:46.999 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:18:10.383 [main] DEBUG planets.transportation.TransportationVehicleReader - Header = Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+23:18:10.387 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+23:18:10.391 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+23:18:10.392 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+23:18:10.392 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+23:18:10.393 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+23:18:10.393 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+23:18:10.393 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+23:18:10.394 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+23:18:10.395 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+23:18:10.395 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+23:18:10.396 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+23:18:10.396 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Superbus,Bus,12000,20,10000000,250,1,15,100
+23:18:10.396 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+23:18:10.397 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+23:18:10.397 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+23:18:10.398 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+23:18:10.400 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+23:18:10.400 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+23:18:10.401 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+23:18:10.401 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+23:18:10.401 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Honda Accord,Car,1550,3.3,26000,185,1,15,100
+23:18:10.401 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+23:18:10.402 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+23:18:10.402 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+23:18:10.402 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+23:18:10.402 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+23:18:10.403 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+23:18:10.403 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+23:18:10.403 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+23:18:10.404 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+23:18:10.405 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
+23:18:10.405 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:20:39.062 [main] DEBUG planets.transportation.TransportationVehicleReader - Header = Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+23:20:39.066 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+23:20:39.070 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+23:20:39.071 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+23:20:39.071 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+23:20:39.072 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+23:20:39.072 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+23:20:39.072 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+23:20:39.073 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+23:20:39.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+23:20:39.075 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+23:20:39.075 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+23:20:39.076 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+23:20:39.076 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+23:20:39.077 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+23:20:39.077 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+23:20:39.078 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+23:20:39.078 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+23:20:39.079 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+23:20:39.079 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+23:20:39.079 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+23:20:39.079 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+23:20:39.080 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+23:20:39.080 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+23:20:39.081 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+23:20:39.082 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+23:20:39.082 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+23:20:39.084 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+23:20:39.085 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+23:20:39.085 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+23:20:39.086 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+23:20:39.086 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+23:20:39.086 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+23:20:39.086 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+23:20:39.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+23:20:39.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+23:20:39.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+23:20:39.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+23:20:39.088 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+23:20:39.088 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
+23:20:39.089 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:22:55.185 [main] DEBUG planets.transportation.TransportationVehicleReader - HFDSHJDSKF = Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+23:22:55.189 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+23:22:55.193 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+23:22:55.193 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+23:22:55.194 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+23:22:55.194 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+23:22:55.194 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+23:22:55.195 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+23:22:55.195 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+23:22:55.196 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+23:22:55.197 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+23:22:55.198 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+23:22:55.198 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+23:22:55.199 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+23:22:55.199 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+23:22:55.199 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+23:22:55.200 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+23:22:55.200 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+23:22:55.200 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+23:22:55.201 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+23:22:55.201 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+23:22:55.201 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+23:22:55.202 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+23:22:55.202 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+23:22:55.203 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+23:22:55.204 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+23:22:55.208 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+23:22:55.208 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+23:22:55.209 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+23:22:55.209 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+23:22:55.209 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+23:22:55.210 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+23:22:55.211 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+23:22:55.211 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+23:22:55.211 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+23:22:55.211 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+23:22:55.212 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+23:22:55.212 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+23:22:55.213 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+23:22:55.214 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
+23:22:55.215 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:25:08.069 [main] DEBUG planets.transportation.TransportationVehicleReader - Header = Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+23:25:08.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+23:25:08.078 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+23:25:08.079 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+23:25:08.080 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+23:25:08.080 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+23:25:08.080 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+23:25:08.081 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+23:25:08.081 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+23:25:08.082 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+23:25:08.082 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+23:25:08.083 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+23:25:08.084 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Superbus,Bus,12000,20,10000000,250,1,15,100
+23:25:08.085 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+23:25:08.085 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+23:25:08.085 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+23:25:08.086 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+23:25:08.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+23:25:08.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+23:25:08.087 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+23:25:08.088 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+23:25:08.088 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Honda Accord,Car,1550,3.3,26000,185,1,15,100
+23:25:08.088 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+23:25:08.089 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+23:25:08.089 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+23:25:08.089 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+23:25:08.090 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+23:25:08.090 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+23:25:08.091 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+23:25:08.091 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+23:25:08.092 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+23:25:08.093 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
+23:25:08.099 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:25:30.991 [main] DEBUG planets.transportation.TransportationVehicleReader - Header = Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+23:25:30.995 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+23:25:31.001 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+23:25:31.002 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+23:25:31.002 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+23:25:31.003 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+23:25:31.003 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+23:25:31.003 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+23:25:31.004 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+23:25:31.005 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+23:25:31.006 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+23:25:31.006 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+23:25:31.008 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Superbus,Bus,12000,20,10000000,250,1,15,100
+23:25:31.008 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+23:25:31.009 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+23:25:31.009 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+23:25:31.010 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+23:25:31.011 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+23:25:31.012 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+23:25:31.012 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+23:25:31.012 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+23:25:31.013 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Honda Accord,Car,1550,3.3,26000,185,1,15,100
+23:25:31.013 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+23:25:31.013 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+23:25:31.014 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+23:25:31.014 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+23:25:31.014 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+23:25:31.015 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+23:25:31.016 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+23:25:31.017 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+23:25:31.018 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+23:25:31.018 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@54a7079e
+23:25:31.019 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+23:37:04.973 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number : 0Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+23:37:04.977 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+23:37:04.981 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+23:37:04.981 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+23:37:04.981 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+23:37:04.982 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+23:37:04.982 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+23:37:04.982 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+23:37:04.983 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+23:37:04.983 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+23:37:04.984 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+23:37:04.984 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+23:37:04.985 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Superbus,Bus,12000,20,10000000,250,1,15,100
+23:37:04.986 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+23:37:04.986 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+23:37:04.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+23:37:04.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+23:37:04.987 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+23:37:04.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+23:37:04.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+23:37:04.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+23:37:04.988 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Honda Accord,Car,1550,3.3,26000,185,1,15,100
+23:37:04.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+23:37:04.989 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+23:37:04.990 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+23:37:04.990 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+23:37:04.990 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+23:37:04.991 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+23:37:04.992 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+23:37:04.992 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+23:37:04.992 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is : 0DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+23:37:04.993 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+23:37:04.994 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:00:45.058 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 0: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:00:45.062 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:00:45.067 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:00:45.068 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:00:45.068 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:00:45.068 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:00:45.069 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:00:45.069 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:00:45.070 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:00:45.070 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:00:45.071 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:00:45.071 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:00:45.072 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:00:45.072 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:00:45.072 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:00:45.073 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:00:45.073 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:00:45.073 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:00:45.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:00:45.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:00:45.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:00:45.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:00:45.074 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:00:45.075 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:00:45.075 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:00:45.075 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:00:45.076 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:00:45.076 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:00:45.076 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:00:45.077 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:00:45.078 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number is 0: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:00:45.078 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:00:45.079 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:01:36.669 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 0has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:01:36.673 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:01:36.677 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:01:36.677 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:01:36.678 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:01:36.678 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:01:36.678 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:01:36.679 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:01:36.679 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:01:36.680 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:01:36.681 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:01:36.681 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:01:36.681 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:01:36.682 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:01:36.682 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:01:36.682 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:01:36.683 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:01:36.684 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:01:36.684 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:01:36.685 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:01:36.685 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:01:36.685 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:01:36.685 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:01:36.685 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:01:36.686 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:01:36.686 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:01:36.686 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:01:36.687 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:01:36.687 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:01:36.689 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:01:36.689 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0has: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:01:36.690 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:01:36.691 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:01:51.471 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 0 has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:01:51.475 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:01:51.478 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:01:51.478 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:01:51.480 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:01:51.480 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:01:51.480 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:01:51.481 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:01:51.482 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:01:51.482 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:01:51.482 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:01:51.483 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:01:51.483 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:01:51.484 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:01:51.484 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:01:51.484 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:01:51.485 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:01:51.485 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:01:51.486 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:01:51.486 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:01:51.486 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:01:51.486 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:01:51.487 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:01:51.487 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:01:51.487 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:01:51.487 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:01:51.488 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:01:51.488 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:01:51.489 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:01:51.489 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:01:51.489 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 0 has: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:01:51.490 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:01:51.491 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:04:49.546 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:04:49.549 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = null
+00:04:49.550 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:05:35.910 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:05:35.914 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:05:35.918 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:05:35.918 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:05:35.919 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:05:35.919 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:05:35.919 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:05:35.920 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:05:35.920 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:05:35.921 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:05:35.921 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:05:35.922 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:05:35.922 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:05:35.923 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:05:35.923 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:05:35.923 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:05:35.924 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:05:35.924 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:05:35.925 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:05:35.925 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:05:35.925 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:05:35.925 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:05:35.925 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:05:35.926 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:05:35.926 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:05:35.927 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:05:35.927 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:05:35.928 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:05:35.928 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:05:35.929 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:05:35.929 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:05:35.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:05:35.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:16:54.367 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:16:54.371 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:16:54.373 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:16:54.373 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:16:54.373 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:16:54.377 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:16:54.377 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:16:54.378 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:16:54.378 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:16:54.378 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:16:54.379 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:16:54.379 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:16:54.380 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:16:54.380 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:16:54.380 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:16:54.381 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:16:54.381 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:16:54.382 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:16:54.382 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:16:54.382 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:16:54.382 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:16:54.382 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:16:54.383 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:16:54.383 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:16:54.383 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:16:54.384 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:16:54.385 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:16:54.386 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:16:54.386 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:16:54.387 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:16:54.387 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:16:54.387 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:16:54.389 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:16:54.389 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:16:54.390 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:16:54.390 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:16:54.390 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:16:54.390 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:16:54.391 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:16:54.391 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:16:54.392 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:17:26.251 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:17:26.251 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:17:26.263 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:17:26.263 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:17:26.263 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:17:26.264 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:17:26.264 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:17:26.264 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:17:26.265 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:17:26.266 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:17:26.267 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:17:26.267 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:17:26.268 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:17:26.268 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:17:26.269 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:17:26.269 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:17:26.269 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:17:26.270 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:17:26.270 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:17:26.270 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:17:26.271 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:17:26.271 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:17:26.271 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:17:26.271 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:17:26.271 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:17:26.272 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:17:26.273 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:17:26.273 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:17:26.273 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:17:26.274 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:17:26.274 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:17:26.274 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:17:26.275 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:17:26.275 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:17:26.276 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:17:26.276 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:17:26.276 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:17:26.277 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:17:26.277 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:17:26.277 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:17:26.278 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:17:41.135 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:17:41.139 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:17:41.143 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:17:41.144 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:17:41.144 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:17:41.144 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:17:41.145 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:17:41.145 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:17:41.146 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:17:41.146 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:17:41.147 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:17:41.147 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:17:41.148 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:17:41.148 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:17:41.148 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:17:41.149 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:17:41.149 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:17:41.150 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:17:41.151 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:17:41.151 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:17:41.152 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:17:41.152 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:17:41.152 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:17:41.152 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:17:41.152 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:17:41.153 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:17:41.153 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:17:41.153 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:17:41.154 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:17:41.154 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:17:41.155 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:17:41.155 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:17:41.156 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:17:41.156 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:17:41.157 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:17:41.157 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:17:41.158 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:17:41.158 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:17:41.158 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:17:41.159 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:17:41.160 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:18:10.016 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:18:10.020 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:18:10.023 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:18:10.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:18:10.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:18:10.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:18:10.025 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:18:10.025 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:18:10.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:18:10.027 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:18:10.027 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:18:10.028 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:18:10.028 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:18:10.028 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:18:10.029 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:18:10.029 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:18:10.030 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:18:10.030 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:18:10.030 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:18:10.030 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:18:10.030 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:18:10.031 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:18:10.031 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:18:10.031 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:18:10.031 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:18:10.032 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:18:10.032 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:18:10.033 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:18:10.033 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:18:10.034 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:18:10.034 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:18:10.035 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:18:10.035 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:18:10.037 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:18:10.037 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:18:10.037 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:18:10.037 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:18:10.038 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:18:10.039 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:18:10.039 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:18:10.040 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:18:59.924 [main] DEBUG planets.transportation.TransportationVehicleReader - Hedddddd 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:18:59.928 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:18:59.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:18:59.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:18:59.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:18:59.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:18:59.930 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:18:59.935 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:18:59.936 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:18:59.937 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:18:59.937 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:18:59.938 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:18:59.938 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:18:59.939 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:18:59.939 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:18:59.939 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:18:59.940 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:18:59.940 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:18:59.940 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:18:59.941 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:18:59.941 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:18:59.942 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:18:59.942 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:18:59.943 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:18:59.943 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:18:59.943 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:18:59.943 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:18:59.944 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:18:59.944 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:18:59.945 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:18:59.945 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:18:59.946 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:18:59.946 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:18:59.947 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:18:59.947 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:18:59.947 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:18:59.947 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:18:59.948 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:18:59.948 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:18:59.949 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:18:59.950 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:19:31.414 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:19:31.418 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:19:31.420 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:19:31.420 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:19:31.421 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:19:31.421 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:19:31.421 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:19:31.422 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:19:31.422 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:19:31.423 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:19:31.423 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:19:31.423 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:19:31.423 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:19:31.423 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:19:31.426 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:19:31.426 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:19:31.426 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:19:31.427 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:19:31.427 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:19:31.427 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:19:31.427 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:19:31.427 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:19:31.428 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:19:31.428 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:19:31.428 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:19:31.428 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:19:31.428 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:19:31.429 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:19:31.429 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:19:31.429 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:19:31.430 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:19:31.430 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:19:31.430 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:19:31.431 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:19:31.431 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:19:31.431 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:19:31.431 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:19:31.432 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:19:31.432 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:19:31.432 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:19:31.433 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:19:48.164 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:19:48.169 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:19:48.170 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:19:48.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:19:48.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:19:48.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:19:48.174 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:19:48.175 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:19:48.175 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:19:48.176 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:19:48.176 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:19:48.176 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:19:48.177 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:19:48.177 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:19:48.177 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:19:48.178 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:19:48.178 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:19:48.179 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:19:48.179 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:19:48.179 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:19:48.179 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:19:48.179 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:19:48.180 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:19:48.180 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:19:48.180 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:19:48.180 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:19:48.181 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:19:48.181 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:19:48.181 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:19:48.182 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:19:48.183 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:19:48.184 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:19:48.185 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:22:24.148 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:22:24.153 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:22:24.156 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:22:24.157 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:22:24.157 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:22:24.158 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:22:24.158 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:22:24.159 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:22:24.159 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:22:24.161 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:22:24.161 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:22:24.161 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:22:24.162 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:22:24.163 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:22:24.163 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:22:24.164 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:22:24.164 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:22:24.165 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:22:24.165 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:22:24.165 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:22:24.165 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:22:24.165 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:22:24.166 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:22:24.166 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:22:24.167 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:22:24.167 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:22:24.168 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:22:24.168 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:22:24.168 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:22:24.170 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:22:24.171 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:22:24.171 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:22:24.172 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:22:24.172 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:22:24.172 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:22:24.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:22:24.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:22:24.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:22:24.173 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:22:24.174 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:22:24.175 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:22:42.284 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Planetary Body Name,Classification,Diameter (km),Weight Relative to Earth,Average Distance from Earth (km),Average Distance from Sun (km),Orbital Eccentricity,Albedo,Day Length (hours),Year Length (days)
+00:22:42.289 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: Mercury,Planet,4880,0.055,91690000,57909227,0.2056,0.106,1408,88
+00:22:42.293 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Venus,Planet,12104,0.815,41400000,108209475,0.0068,0.77,5832,225
+00:22:42.294 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Earth,Planet,12742,1,0,149597870.7,0.0167,0.3,24,365.25
+00:22:42.294 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: Mars,Planet,6779,0.107,78340000,227939200,0.0934,0.25,24.6,687
+00:22:42.295 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Jupiter,Planet,139820,317.8,628730000,778570000,0.0489,0.52,9.9,4333
+00:22:42.296 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Saturn,Planet,116460,95.162,1275000000,1433530000,0.0565,0.342,10.7,10759
+00:22:42.297 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Uranus,Planet,50724,14.536,2723950000,2875040000,0.046,0.3,17.2,30687.15
+00:22:42.297 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Neptune,Planet,49244,17.147,4353650000,4503443661,0.0096,0.29,16,60190
+00:22:42.298 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Pluto,Dwarf planet,2377,0.00218,4760000000,5906400000,0.2488,0.49,153.3,90736
+00:22:42.298 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Luna,Moon,3474.8,0.0123,384400,149597870.7,0.0554,0.11,708.7,354
+00:22:42.299 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: Eris,Dwarf planet,2326,0.0028,10210000000,10144100000,0.44177,0.96,25.9,203830
+00:22:42.299 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Haumea,Dwarf planet,1630,0.0007,6500000000,6471000000,0.19126,0.7,3.9,104283
+00:22:42.300 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Makemake,Dwarf planet,1430,0.00067,6800000000,6786000000,0.159,0.77,22,113183
+00:22:42.300 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Phobos,Moon,22.2,0,9376,227939200,0.0151,0.071,7.7,0.319
+00:22:42.301 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Deimos,Moon,12.4,0,23556,227939200,0.0002,0.068,30.3,1.263
+00:22:42.301 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Io,Moon,3642.6,0.015,421700,778570000,0.0041,0.63,42.5,1.77
+00:22:42.301 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Europa,Moon,3121.6,0.008,671034,778570000,0.009,0.67,85.2,3.55
+00:22:42.302 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Ganymede,Moon,5262.4,0.025,1070412,778570000,0.0013,0.43,171.6,7.15
+00:22:42.302 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Callisto,Moon,4820.6,0.018,1882700,778570000,0.0074,0.22,400.5,16.69
+00:22:42.302 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Titan,Moon,5151,0.023,1221870,1433530000,0.0298,0.21,382.7,15.94
+00:22:42.302 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Rhea,Moon,1527.6,0.0004,527040,1433530000,0.0003,0.949,108.4,4.52
+00:22:42.302 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Iapetus,Moon,1469,0.0003,3561300,1433530000,0.0283,0.6,79.3,79.3
+00:22:42.303 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Dione,Moon,1122.7,0.00016,377400,1433530000,0.0022,0.998,66.9,2.73
+00:22:42.303 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: Tethys,Moon,1062,0.00015,294660,1433530000,0,1.229,45.3,1.89
+00:22:42.303 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Enceladus,Moon,504,0.000015,238020,1433530000,0,1.38,33,1.37
+00:22:42.304 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Titania,Moon,1577.8,0.0004,435840,2875040000,0.029,0.35,43.3,8.71
+00:22:42.304 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Oberon,Moon,1522.8,0.0003,582880,2875040000,0.007,0.31,13.5,8.71
+00:22:42.305 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Umbriel,Moon,1169.4,0.0001,266000,2875040000,0.005,0.21,13.5,4.14
+00:22:42.305 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Ariel,Moon,1157.8,0.0001,191020,2875040000,0.003,0.39,13.5,2.52
+00:22:42.305 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: Miranda,Moon,471.6,0.000009,129390,2875040000,0.001,0.32,13.5,1.41
+00:22:42.306 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 32 has: Triton,Moon,2706.8,0.0036,354759,4503443661,0.0002,0.76,-5.877,5.88
+00:22:42.306 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 33 has: Nereid,Moon,340,0.00001,5513810,4503443661,0.75,0,360,1.61
+00:22:42.307 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 34 has: Sedna,Dwarf Planet,995,0.0002,13000000000,11300000000,0.854,0.16,10,11400
+00:22:42.307 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 35 has: Quaoar,Dwarf Planet,1110,0.0002,6400000000,6500000000,0.04,0.1,17.68,285
+00:22:42.307 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 36 has: Orcus,Dwarf Planet,917,0.00005,6400000000,6700000000,0.007,0.23,10.07,248
+00:22:42.308 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 37 has: Varuna,Dwarf Planet,1000,0.0001,6200000000,6500000000,0.051,0.07,6.34,283
+00:22:42.308 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 38 has: Ixion,Dwarf Planet,617,0.00003,6300000000,6600000000,0.28,0.15,12.4,250
+00:22:42.308 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 39 has: Ceres,Dwarf Planet,940,0.00015,414000000,413690250,0.075,0.09,9.07,1681.63
+00:22:42.309 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:22:42.309 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:23:27.893 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:23:27.897 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:23:27.901 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:23:27.902 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:23:27.902 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:23:27.902 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:23:27.902 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:23:27.903 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:23:27.904 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:23:27.904 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:23:27.905 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:23:27.905 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:23:27.905 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:23:27.906 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:23:27.906 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:23:27.906 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:23:27.907 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:23:27.907 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:23:27.907 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:23:27.908 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:23:27.908 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:23:27.908 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:23:27.908 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:23:27.908 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:23:27.908 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:23:27.909 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:23:27.909 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:23:27.910 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:23:27.910 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:23:27.911 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:23:27.912 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:23:27.913 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:23:27.913 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
+00:23:45.014 [main] DEBUG planets.transportation.TransportationVehicleReader - Header has line number 1 has: Transport Vehicle Name,Classification,Maximum Weight (kg),Volume (m^3),Cost to Build (USD),Max speed km/h,Number of crew members,Per meal food cost per crew member ($),Hourly salary per crew member ($)
+00:23:45.018 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 2 has: USS Enterprise NCC-1701,Starship,190000000,5940000,1.24E+12,268760448,430,10,200
+00:23:45.020 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 3 has: Typhoon class submarine,Submarine,48000000,19000,100000000,43.5,160,25,200
+00:23:45.022 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 4 has: Space Shuttle,Spacecraft,2030000,350,1500000000,28160,8,10,300
+00:23:45.022 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 5 has: SpaceX Starship,Spacecraft,1500000,9000,200000000,25265,100,10,500
+00:23:45.022 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 6 has: Shinkansen N700,Train,696000,1020,300000000,300,2,15,100
+00:23:45.023 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 7 has: Boeing 747,Aircraft,447696,1630,3800000000,988,2,25,200
+00:23:45.023 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 8 has: Alstom TGV M,Train,440000,390,30000000,360,377,15,100
+00:23:45.023 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 9 has: Royal Caribbean's Wonder of the Seas,Cruise Ship,236857,420000,1300000000,36.4,2300,30,80
+00:23:45.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 10 has: Lockheed SR-71 Blackbird,Aircraft,78000,90,33000000,3540,2,20,500
+00:23:45.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 11 has: Millennium Falcon,Starship,25000,6722.04,2474132337,12000000,4,10,200
+00:23:45.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 12 has: North American X-15,Aircraft,15420,6.7,300000000,7275,1,20,200
+00:23:45.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 13 has: Superbus,Bus,12000,20,10000000,250,1,15,100
+00:23:45.024 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 14 has: Bloodhound LSR,Car,6422,5.5,15000000,1011,1,15,100
+00:23:45.025 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 15 has: Apollo 10 Command Module,Spacecraft,5560,6.17,185000000,39897,3,20,250
+00:23:45.025 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 16 has: Marine Turbine Technologies 420-RR,Boat,3000,2.5,200000,290,1,20,150
+00:23:45.025 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 17 has: Sikorsky X2,Helicopter,2722,6.9,50000000,462,1,20,150
+00:23:45.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 18 has: Miss Geico,Boat,2500,3.5,1000000,322,2,20,150
+00:23:45.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 19 has: Mercedes-Benz GLE,Car,2420,4.8,60000,209,1,15,100
+00:23:45.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 20 has: Tesla Model S Plaid,Car,2229,4,129990,322,1,15,100
+00:23:45.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 21 has: Bugatti Chiron,Car,1995,3.5,3000000,490.484,1,15,100
+00:23:45.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 22 has: Honda Accord,Car,1550,3.3,26000,185,1,15,100
+00:23:45.026 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 23 has: Jesko Absolut,Car,1400,2.8,3000000,531,1,15,100
+00:23:45.027 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 24 has: Toyota Corolla,Car,1350,3.1,20000,180,1,15,100
+00:23:45.027 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 25 has: McLaren F1,Car,1140,3.2,15000000,386.4,1,15,100
+00:23:45.027 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 26 has: Parker Solar Probe,Spacecraft,685,0.5,1500000000,692015,0,0,0
+00:23:45.027 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 27 has: Spirit of Australia wooden speedboat,Boat,500,2,50000,513.11,1,20,150
+00:23:45.028 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 28 has: Kawasaki Ninja H2R,Motorcycle,216,0.3,55000,400,1,15,100
+00:23:45.028 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 29 has: Lunar Roving Vehicle,Moon rover,210,1,38000000,13,2,10,200
+00:23:45.028 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 30 has: Yamaha YZF R1,Motorcycle,200,0.6,17399,299,1,15,100
+00:23:45.029 [main] DEBUG planets.transportation.TransportationVehicleReader - Line number 31 has: DRL RacerX,Drone,0.8,0.005,500,289,0,0,0
+00:23:45.029 [main] DEBUG planets.transportation.TransportationVehicleReader - Detail = planets.transportation.TransportationVehicle@26e356f0
+00:23:45.030 [main] DEBUG planets.transportation.TransportationVehicleReader - Line = null
