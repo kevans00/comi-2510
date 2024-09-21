@@ -4,28 +4,20 @@ import java.util.ArrayList;
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
 import planets.transportation.TransportationVehicle;
 import planets.transportation.TransportationVehicleReader;
+import planets.planetai.PlanetaryBody;
+import planets.planetai.PlanetaryBodyReader;
 
 public class MainTest {
+	
+public static final String PLANET_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\planetai\\\\planet_details.csv";
+public static final String VEHICLE_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\transportation\\\\vehicle_details.csv";
+public static final String COMMA_DELIMITER = ",";
 
-	public static String GetData() {
-		
-		return "test eat my dick";
-	};
-	
-	
-	
 	public static void main(String[] args) {
 
-		final int VELOCITY_MIN = 0;
-		final int VELOCITY_MAX = 1080000000;
-		TransportationVehicleReader reader = null;
-		PlanetaryDialog pd = null;
+		TransportationVehicleReader reader = new TransportationVehicleReader();
+		PlanetaryDialog pd = new PlanetaryDialog("Creating Planetary Dialog");
 		
-		reader = new TransportationVehicleReader();
-		pd = new PlanetaryDialog("Test");
-		
-		
-		String test = GetData();
 			//Planet getName
 			//Planet getDistanceFromSun & getDistanceFromEarth
 		//Ask user "Chose your starting planet"
@@ -57,21 +49,40 @@ public class MainTest {
 		
 		final String DELIMITER = ",";
 		String FILE_LOCATION = "C:\\Users\\Lenovo ThinkPad T430\\eclipse-workspace\\ProgrammingAssignmentOne-aid\\src\\main\\java\\planets\\transportation\\vehicle_details.csv";
+		
 		ArrayList<TransportationVehicle> list = null;
+		TransportationVehicle selectedVehicle = null;
 		
 		list = reader.readCSV(FILE_LOCATION, DELIMITER);
+		selectedVehicle = list.get(1);
 		
 		for (TransportationVehicle detail:list) {
-			//print(detail)
+
 			if (detail.getMaxSpeed() < 10000)
 			{
 				System.out.println(detail.getMaxSpeed() + " is less than 10,000");
-				System.out.println("Hey, " + test);
-			}
-			//System.out.println(detail.getMaxSpeed());		//See if we can print out all of the detail items
-			
 			}
 		}
+		
+		System.out.println("Vehicle at Index 1 is " + selectedVehicle.getVehicleName());
+	}
+	
+	public ArrayList<PlanetaryBody> GetPlanetData() {
+		PlanetaryBodyReader pb = new PlanetaryBodyReader();
+		ArrayList<PlanetaryBody> plist = null;
+		plist = pb.readCSV(PLANET_CSV, COMMA_DELIMITER);
+		
+		return plist;
+		}
+		
+	public ArrayList<TransportationVehicle> GetVehicleData() {
+		TransportationVehicleReader tv = new TransportationVehicleReader();
+		ArrayList<TransportationVehicle> vlist = null;
+		vlist = tv.readCSV(VEHICLE_CSV, COMMA_DELIMITER);
+		
+		return vlist;
+	}
+	
 	}
 
 
