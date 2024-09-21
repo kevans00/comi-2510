@@ -20,7 +20,6 @@ public class TransportationVehicleReader {
 		
 		try {
 			File file = new File(csvFile);
-			//FileReader fr = new FileReader(file);
 			FileReader fr = new FileReader(file);
 						
 			ln = new LineNumberReader(fr);
@@ -47,8 +46,8 @@ public class TransportationVehicleReader {
 				
 						list.add(detail);
 						}
-			TransportationVehicleReader.logger.debug("Detail = " + detail) ;
-			TransportationVehicleReader.logger.debug("Line = " + line);
+			//TransportationVehicleReader.logger.debug("Detail = " + detail) ;
+			//TransportationVehicleReader.logger.debug("Line = " + line);
 			ln.close();
 		} catch (IOException ioe)
 		{
@@ -68,6 +67,8 @@ public class TransportationVehicleReader {
 		}
 		return list;
 	}
+	
+	
 	
 }
 

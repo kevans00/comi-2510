@@ -10,7 +10,8 @@ import org.apache.logging.log4j.Logger;
 public class PlanetaryBodyReader {
 	
 	private static final Logger logger = LogManager.getLogger(PlanetaryBodyReader.class.getName());
-	
+	// ArrayList<PlanetaryBody> list = new ArrayList<PlanetaryBody>();
+	ArrayList<String> planetNames = new ArrayList<String>();
 	
 	/**
 	 * Default constructor
@@ -28,7 +29,6 @@ public class PlanetaryBodyReader {
 			br = new BufferedReader(fr);
 			String line = "";
 			String[] tempArr;
-			int counter = 0;
 			
 			line = br.readLine();
 			PlanetaryBodyReader.logger.debug("Header = " + line);
@@ -51,8 +51,10 @@ public class PlanetaryBodyReader {
 				
 						list.add(detail);
 						}
-			PlanetaryBodyReader.logger.debug("Detail = " + detail) ;
-			PlanetaryBodyReader.logger.debug("Line = " + line);
+
+			//PlanetaryBodyReader.logger.debug("Detail = " + detail) ;
+			//PlanetaryBodyReader.logger.debug("Line = " + line);
+			
 			br.close();
 		} catch (IOException ioe)
 		{
@@ -71,7 +73,14 @@ public class PlanetaryBodyReader {
 			}
 		}
 		return list;
+	}	
+	
+	public static void loadPlanetNamesArray() {
+		
+		
 	}
 	
 }
+	
+
 
