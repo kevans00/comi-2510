@@ -50,8 +50,8 @@ public static final String COMMA_DELIMITER = ",";
 		PlanetaryDialog pd = new PlanetaryDialog("Creating Planetary Dialog");
 		
 		// Create Frame
-		makeFrame();
-		makeVehicleArray();
+		//makeFrame();
+		///makeVehicleArray();
 		// Get Data
 		// Fill Frame with data
 		
