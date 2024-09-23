@@ -19,7 +19,6 @@ import planets.planetai.PlanetaryBodyReader;
 public class MainTest {
 	private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
 
-	// ToDo: Make this get the CSV better
 	public static final String RESOURCE_PATH = "src\\main\\resources\\in\\";
 	public static final String OUTPUT_PATH = "src\\main\\resources\\out\\";
 	public static final String PLANET_CSV_FILE = "planet_details.csv";
@@ -175,7 +174,7 @@ public class MainTest {
 	
 	public static ArrayList<String> doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
 		
-		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) {
+		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) { //Fix bug here; startingPlanetaryBody is null
 			// ToDo: what do if startingPlanet == endingPlanet?
 			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
 			// Do we calculate it anyway? return 0 kilometers?
