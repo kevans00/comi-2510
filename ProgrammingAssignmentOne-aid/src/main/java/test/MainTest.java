@@ -287,10 +287,10 @@ public class MainTest {
 	
 	public static void writeToCSVFile(String filename, String data) {
 	    try {
-	        FileWriter writer = new FileWriter(filename);
+	        FileWriter writer = new FileWriter(filename, true);
 	        writer.write(data); // Does this automatically append to a new line?
 	        writer.close();
-	        formatLogger("Successfully wrote data to '%s'", filename);
+	        formatLogger("Successfully wrote contents to '%s'", filename);
 	        System.out.println("Successfully wrote to the file.");
 	    } 
 	    catch (IOException e) {
@@ -373,7 +373,12 @@ public class MainTest {
 		String filepath = createCSVFile();
 		
         // Finally, write contents to the file
-        writeToCSVFile(filepath, csvStringOne);
+		String csvHeaders="Starting Planet, Destination Planet, Distance (KM), Travel Time (hours), Travel Time (days), Travel Trime (years)";
+        
+		writeToCSVFile(filepath, csvHeaders + "\n");
+        writeToCSVFile(filepath, csvStringOne+ "\n");
+        writeToCSVFile(filepath, csvStringTwo+ "\n");
+        writeToCSVFile(filepath, csvStringThree+ "\n");
 	}
 }
 
