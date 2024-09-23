@@ -46,25 +46,26 @@ public class TransportationVehicleReader {
 				
 						list.add(detail);
 						}
-			//TransportationVehicleReader.logger.debug("Detail = " + detail) ;
-			//TransportationVehicleReader.logger.debug("Line = " + line);
+			
 			ln.close();
-		} catch (IOException ioe)
-		{
+			
+		} 
+		
+		catch (IOException ioe){
 			ioe.printStackTrace();
-		} finally
-		{
-			if (null != ln)
-			{
-				try
-				{
+		} 
+		
+		finally{
+			if (null != ln){
+				try{
 					ln.close();
-				} catch (IOException ioe)
-				{
+				} 
+				catch (IOException ioe){
 					ioe.printStackTrace();
 				}
 			}
 		}
+		
 		return list;
 	}
 	

@@ -10,23 +10,20 @@ import org.apache.logging.log4j.Logger;
 public class PlanetaryBodyReader {
 	
 	private static final Logger logger = LogManager.getLogger(PlanetaryBodyReader.class.getName());
-	// ArrayList<PlanetaryBody> list = new ArrayList<PlanetaryBody>();
-	ArrayList<String> planetNames = new ArrayList<String>();
 	
-	/**
-	 * Default constructor
-	 */
 	public PlanetaryBodyReader() {}
 	
 	public ArrayList<PlanetaryBody> readCSV(String csvFile, String delimiter){
-		BufferedReader br = null;
 		ArrayList<PlanetaryBody> list = new ArrayList<PlanetaryBody>();
 		PlanetaryBody detail = null;
+		BufferedReader br = null;
 		
 		try {
 			File file = new File(csvFile);
 			FileReader fr = new FileReader(file);
+			
 			br = new BufferedReader(fr);
+			
 			String line = "";
 			String[] tempArr;
 			
@@ -51,11 +48,9 @@ public class PlanetaryBodyReader {
 				
 						list.add(detail);
 						}
-
-			//PlanetaryBodyReader.logger.debug("Detail = " + detail) ;
-			//PlanetaryBodyReader.logger.debug("Line = " + line);
 			
 			br.close();
+			
 		} catch (IOException ioe)
 		{
 			ioe.printStackTrace();
