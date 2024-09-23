@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.lang.Math;
 import java.io.File;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +23,8 @@ public class MainTest {
 	public static final String PLANET_CSV_FILE = "planet_details.csv";
 	public static final String VEHICLE_CSV_FILE = "vehicle_details.csv";
 	public static final String DELIMITER = ",";
+	public static final int MIN_FILE_NUMBER = 1;
+	public static final int MAX_FILE_NUMBER = 21;	
 
 	public static final int SECONDS_IN_A_DAY = 86400;
 	public static final int HOURS_IN_A_DAY = 24;
@@ -266,7 +269,22 @@ public class MainTest {
 		return timeArray;
 	}
 	
+	public static String buildFilename() {
+		String fixedName = "ProcessedData";
+		int randomNumber = ThreadLocalRandom.current().nextInt(MIN_FILE_NUMBER, MAX_FILE_NUMBER + 1);
+		String filename = String.format("%s%s.csv", fixedName, randomNumber);
+		
+		return filename;
+	}
+	
+	public static String writeCSVFile(String data) {
+		
+		return "";
+	}
+	
 	public static void main(String[] args) {
+		String csvOutputHeader = buildFilename();
+		formatLogger("The new filename has %s", csvOutputHeader);
 		
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
 		double tripOneTimeArray[] = calculateTrip(pd);
@@ -297,6 +315,7 @@ public class MainTest {
 		pd.showModalDialog(modalMessageThree);
 		
 		//Get the results and format them
+
 		// tripOne details, tripTwo details, tripThree details - ship, starting dest, ending dest, distance, travel times for h, d, y
 		
 		// ToDo: make a message formatter to format all the results to a CSV
