@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.lang.Math;
 import java.io.File;
 import java.util.Random;
+import java.io.IOException;
+import java.io.FileWriter;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,8 +20,8 @@ public class MainTest {
 	private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
 
 	// ToDo: Make this get the CSV better
-	public static final String RESOURCE_FOLDER = "src\\main\\resources\\in\\";
-	public static final String OUTPUT_FOLDER = "src\\main\\resources\\out\\";
+	public static final String RESOURCE_PATH = "src\\main\\resources\\in\\";
+	public static final String OUTPUT_PATH = "src\\main\\resources\\out\\";
 	public static final String PLANET_CSV_FILE = "planet_details.csv";
 	public static final String VEHICLE_CSV_FILE = "vehicle_details.csv";
 	public static final String DELIMITER = ",";
@@ -38,8 +40,8 @@ public class MainTest {
 
 	public static final double SPEED_OF_LIGHT = 1080000000; // km/hr
 
-	public static String resourceFolderAbsPath = new File(RESOURCE_FOLDER).getAbsolutePath();
-	public static String outputFolderAbsPath = new File(OUTPUT_FOLDER).getAbsolutePath();
+	public static String resourceFolderAbsPath = new File(RESOURCE_PATH).getAbsolutePath();
+	public static String outputFolderAbsPath = new File(OUTPUT_PATH).getAbsolutePath();
 	public static File planetFile = new File(resourceFolderAbsPath, PLANET_CSV_FILE);
 	public static File vehicleFile = new File(resourceFolderAbsPath, VEHICLE_CSV_FILE);
 
@@ -277,15 +279,48 @@ public class MainTest {
 	public static String buildFilename() {
 		String fixedName = "ProcessedData";
 		Random random = new Random();
-		int randomNumber = random.nextInt(20) + 1; // Adding 1 as a hack because this function's range starts at 0
+		int randomNumber = random.nextInt(MAX_FILE_NUMBER) + 1; // Adding 1 as a hack because this function's range is [0, 21)
 		String filename = String.format("%s%s.csv", fixedName, randomNumber);
 		
 		return filename;
 	}
 	
-	public static String writeCSVFile(String data) {
+	public static void writeToCSVFile(String filename, String data) {
+	    try {
+	        FileWriter writer = new FileWriter(filename);
+	        writer.write(data); // Does this automatically append to a new line?
+	        writer.close();
+	        formatLogger("Successfully wrote data to '%s'", filename);
+	        System.out.println("Successfully wrote to the file.");
+	    } 
+	    catch (IOException e) {
+	        System.out.println(e);
+	        e.printStackTrace();
+	      }
+	}
+	
+	public static String createCSVFile() {
+		String fileName = buildFilename();
+		formatLogger("New Filename has %s", fileName);
 		
-		return "";
+		// Check if file exists. If not, then create it
+		String filePath = OUTPUT_PATH + fileName;
+        try { 
+            File f = new File(filePath); 
+  
+            if (f.createNewFile()) 
+            	formatLogger("File Created at %s", filePath);
+
+            else
+                formatLogger("Filename '%s' already exists", fileName); 
+            	//createCSVFile(); // Try again
+        } 
+        catch (IOException e) { 
+            System.err.println(e); 
+            e.printStackTrace();
+        }
+        
+        return filePath;
 	}
 	
 	public static String makeCSVString(ArrayList<String> inputData) {
@@ -310,14 +345,11 @@ public class MainTest {
 	}
 	
 	public static void main(String[] args) {
-		String csvOutputFilename = buildFilename();
-		formatLogger("The new filename has %s", csvOutputFilename);
 		
 		// Trip 1
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
 		ArrayList<String> tripOneDataArray = calculateTrip(pd);
 		String csvStringOne = makeCSVString(tripOneDataArray);
-		
 		formatLogger(csvStringOne);
 		displayTripModalDialog(pd, tripOneDataArray);
 		
@@ -326,7 +358,6 @@ public class MainTest {
 		PlanetaryDialog pdSecondTrip = new PlanetaryDialog(newTripMessage);
 		ArrayList<String> tripTwoDataArray = calculateNextTrip(pdSecondTrip, pd);
 		String csvStringTwo = makeCSVString(tripTwoDataArray);
-		
 		formatLogger(csvStringTwo);
 		displayTripModalDialog(pdSecondTrip, tripTwoDataArray);
 		
@@ -335,17 +366,14 @@ public class MainTest {
 		PlanetaryDialog pdFinalTrip = new PlanetaryDialog(newTripMessageThree);
 		ArrayList<String> tripThreeDataArray = calculateNextTrip(pdFinalTrip, pdSecondTrip);
 		String csvStringThree = makeCSVString(tripThreeDataArray);
-		
 		formatLogger(csvStringThree);
 		displayTripModalDialog(pdFinalTrip, tripThreeDataArray);
 		
-		//Get the results and format them
-
-		// tripOne details, tripTwo details, tripThree details - ship, starting dest, ending dest, distance, travel times for h, d, y
+		// Create a new *.csv file
+		String filepath = createCSVFile();
 		
-		// ToDo: make a message formatter to format all the results to a CSV
-		// Output to a CSV file with a random number between 1-21, formatted as <fixed><random>.csv (e.g. ProcessedData17.csv)
-		
+        // Finally, write contents to the file
+        writeToCSVFile(filepath, csvStringOne);
 	}
 }
 
