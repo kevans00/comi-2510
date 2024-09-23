@@ -15,7 +15,7 @@ public class MainTest {
 	
 public static final String PLANET_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\planetai\\\\planet_details.csv";
 public static final String VEHICLE_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\transportation\\\\vehicle_details.csv";
-public static final String COMMA_DELIMITER = ",";
+public static final String DELIMITER = ",";
 
 	public static void makeFrame() {
 		JFrame frame = new JFrame(); // Create frame object
@@ -40,14 +40,43 @@ public static final String COMMA_DELIMITER = ",";
 		frame.setVisible(true);  
 	}
 
-	public static void makeVehicleArray() {
+	public static String[] getPlanetData() {
+		PlanetaryBodyReader pb = new PlanetaryBodyReader();
+		ArrayList<PlanetaryBody> planetList = null;
+		planetList = pb.readCSV(PLANET_CSV, DELIMITER);
 		
+		int planetArraySize = planetList.size();
+		String planetArray[] = new String[planetArraySize];
+		
+		for (int i=0; i < planetArraySize; i++) {
+			PlanetaryBody entry = planetList.get(i);
+			planetArray[i] = entry.getPlanetName();
+		}
+		
+		return planetArray;
+	}
+		
+	public static String[] getVehicleData() {
+		TransportationVehicleReader tv = new TransportationVehicleReader();
+		ArrayList<TransportationVehicle> vehicleList = null;
+		vehicleList = tv.readCSV(VEHICLE_CSV, DELIMITER);
+		
+		int vehicleArraySize = vehicleList.size();
+		String vehicleArray[] = new String[vehicleArraySize];
+		
+		for (int i=0; i < vehicleArraySize; i++) {
+			TransportationVehicle entry = vehicleList.get(i);
+			vehicleArray[i] = entry.getVehicleName();
+		}
+		
+		return vehicleArray;
 	}
 	
 	public static void main(String[] args) {
 
-		TransportationVehicleReader reader = new TransportationVehicleReader();
-		PlanetaryDialog pd = new PlanetaryDialog("Creating Planetary Dialog");
+		TransportationVehicleReader tvr = new TransportationVehicleReader();
+		PlanetaryBodyReader pbr = new PlanetaryBodyReader();
+		PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		
 		// Create Frame
 		//makeFrame();
@@ -81,47 +110,38 @@ public static final String COMMA_DELIMITER = ",";
 		//Display total trip time
 			//Store in timeThree - time = time + timeThree
 		
+		ArrayList<TransportationVehicle> list = null;
+		list = tvr.readCSV(VEHICLE_CSV, DELIMITER);
+		int arraySize = list.size();
+		
+		String vehicleArray[] = new String[arraySize];
+		
+		for (int i=0; i < arraySize; i++) {
+			//System.out.printf("Vehicle at Index %s is %s", String.valueOf(i), vehicleArray[i].getVehicleName());
+			TransportationVehicle entry = list.get(i);
+			vehicleArray[i] = entry.getVehicleName();
+		}
+		
+		String[] planetData = getPlanetData();
+		String[] vehicleData = getVehicleData();
+		
+		//pd.setTransportationVehicleName("Toyota Corolla");
+		//pd.setStartingPlanetName("Earth");
+		//pd.setDestinationPlanetName("Saturn");
+		
+		pd.useTransporationVehicle();
+		pd.useStartingPlanet();
+		pd.useDestinationPlanet();
+		
+		pd.showMultiEditDialog(planetData, vehicleData);
+		
+		/*
 		pd.getDestinationPlanetName();
 		pd.getTransportationVechicleName();
 		pd.getDestinationPlanetName();
-		
-		final String DELIMITER = ",";
-		String FILE_LOCATION = "C:\\Users\\Lenovo ThinkPad T430\\eclipse-workspace\\ProgrammingAssignmentOne-aid\\src\\main\\java\\planets\\transportation\\vehicle_details.csv";
-		
-		ArrayList<TransportationVehicle> list = null;
-		list = reader.readCSV(FILE_LOCATION, DELIMITER);
-		int arraySize = list.size();
-		
-		TransportationVehicle vehicleArray[] = new TransportationVehicle[arraySize];
-		
-		// Add only vehicles from list to the array
-		for (int i=0; i < arraySize; i++) {
-			vehicleArray[i] = list.get(i);
-		}
-		
-		for (int i=0; i <= arraySize; i++) {
-			System.out.printf("Vehicle at Index %s is %s", String.valueOf(i), vehicleArray[i].getVehicleName());
-		}
-		
-		// new DialogFrame();
+		pd.getStartingPlanetName();
+		*/
 	}
-	
-	public ArrayList<PlanetaryBody> GetPlanetData() {
-		PlanetaryBodyReader pb = new PlanetaryBodyReader();
-		ArrayList<PlanetaryBody> planetList = null;
-		planetList = pb.readCSV(PLANET_CSV, COMMA_DELIMITER);
-		
-		return planetList;
-		}
-		
-	public ArrayList<TransportationVehicle> GetVehicleData() {
-		TransportationVehicleReader tv = new TransportationVehicleReader();
-		ArrayList<TransportationVehicle> vehicleList = null;
-		vehicleList = tv.readCSV(VEHICLE_CSV, COMMA_DELIMITER);
-		
-		return vehicleList;
-	}
-	
 }
 
 
