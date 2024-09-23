@@ -23,7 +23,7 @@ public static final String VEHICLE_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\
 public static final String DELIMITER = ",";
 public static final int SECONDS_IN_A_DAY = 86400;
 public static final int HOURS_IN_A_DAY = 24;
-public static final int DAY_IN_A_YEAR = 365;
+public static final int DAYS_IN_A_YEAR = 365;
 public static final double METERS_TO_KILOMETERS_FACTOR = 3.6;
 public static final double KG_TO_LB_FACTOR = 2.2046;
 public static final double LN_TO_KG_FACTOR = 0.4536;
@@ -100,12 +100,6 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		return drag; // returns in km/h
 	}
 	
-	public static double calculateTripTime(double velocity, double distance) {
-		double time = 0.0;
-		
-		return time; // in hours
-	}
-	
 	public static PlanetaryBody getPlanet(String planet) {
 		int arraySize = planetList.size();
 		PlanetaryBody matchedPlanet = null;
@@ -133,9 +127,35 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		return distance;
 	}
 	
-	public static double calculateTripTime() {
-		return 0.0;
-	};
+	public static TransportationVehicle getVehicle(String vehicle) {
+		int arraySize = vehicleList.size();
+		TransportationVehicle matchedVehicle = null;
+		
+		for (int i = 0; i < arraySize; i++ ) {
+			TransportationVehicle entry = vehicleList.get(i);
+			
+			if (entry.getVehicleName() == vehicle) {
+				matchedVehicle = vehicleList.get(i);
+			}
+		}
+		
+		return matchedVehicle;
+	}
+	
+	public static double calculateTripTimeHours(double velocity, double distance) {
+		double time = distance / velocity; // km and km/hr
+		return time; // in hours
+	}
+	
+	public static double calculateTripTimeDays(double velocity, double distance) {
+		double time = calculateTripTimeHours(velocity, distance) / HOURS_IN_A_DAY;
+		return time; // in days
+	}
+	
+	public static double calculateTriptimeYears(double velocity, double distance) {
+		double time = calculateTripTimeDays(velocity, distance) / DAYS_IN_A_YEAR;
+		return time; // in years
+	}
 	
 	public static void formatLogger(String message, Object... args) {
 		// Combine formating and logging in one
@@ -171,8 +191,17 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 			return;
 		}
 		
-		//New psuedocode:
-		//CalculateTripTime();
+		double distance = calculateRelativeDistance(startingPlanet, endingPlanet);
+		formatLogger("Distance: %s", distance);
+		
+		TransportationVehicle vehicle = getVehicle(chosenVehicle);
+		double velocity = vehicle.getMaxSpeed();
+		
+		//ToDo: Check speed against light speed?
+		
+		double tripTime = calculateTripTimeHours(velocity, distance);
+		formatLogger("Trip time: %s hours", tripTime);
+		
 		//Handle other misc calculations
 		//Get the results and format them
 		
