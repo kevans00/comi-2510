@@ -1,11 +1,11 @@
 package test;
 
 import java.util.ArrayList;
+import java.lang.Math;
+import java.io.File;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.lang.Math;
 
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
 import planets.transportation.TransportationVehicle;
@@ -14,31 +14,37 @@ import planets.planetai.PlanetaryBody;
 import planets.planetai.PlanetaryBodyReader;
 
 public class MainTest {
-private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
+	private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
 
-// ToDo: Make this get the CSV better
-public static final String PLANET_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\planetai\\\\planet_details.csv";
-public static final String VEHICLE_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\transportation\\\\vehicle_details.csv";
-public static final String DELIMITER = ",";
+	// ToDo: Make this get the CSV better
+	public static final String RESOURCE_FOLDER = "src\\main\\resources\\in\\";
+	public static final String OUTPUT_FOLDER = "src\\main\\resources\\out\\";
+	public static final String PLANET_CSV_FILE = "planet_details.csv";
+	public static final String VEHICLE_CSV_FILE = "vehicle_details.csv";
+	public static final String DELIMITER = ",";
 
-public static final int SECONDS_IN_A_DAY = 86400;
-public static final int HOURS_IN_A_DAY = 24;
-public static final int DAYS_IN_A_YEAR = 365;
-public static final int NUMBER_OF_TRIPS = 3; 
+	public static final int SECONDS_IN_A_DAY = 86400;
+	public static final int HOURS_IN_A_DAY = 24;
+	public static final int DAYS_IN_A_YEAR = 365;
 
-public static final double METERS_TO_KILOMETERS_FACTOR = 3.6;
-public static final double KG_TO_LB_FACTOR = 2.2046;
-public static final double LN_TO_KG_FACTOR = 0.4536;
-public static final double KM_TO_MI_FACTOR = 0.6214;
-public static final double MI_TO_KM_FACTOR = 1.6093;
+	public static final double METERS_TO_KILOMETERS_FACTOR = 3.6;
+	public static final double KG_TO_LB_FACTOR = 2.2046;
+	public static final double LN_TO_KG_FACTOR = 0.4536;
+	public static final double KM_TO_MI_FACTOR = 0.6214;
+	public static final double MI_TO_KM_FACTOR = 1.6093;
 
-public static final double SPEED_OF_LIGHT = 1080000000; // km/hr
+	public static final double SPEED_OF_LIGHT = 1080000000; // km/hr
 
-static PlanetaryBodyReader pb = new PlanetaryBodyReader();
-static ArrayList<PlanetaryBody> planetList = pb.readCSV(PLANET_CSV, DELIMITER);
+	public static String resourceFolderAbsPath = new File(RESOURCE_FOLDER).getAbsolutePath();
+	public static String outputFolderAbsPath = new File(OUTPUT_FOLDER).getAbsolutePath();
+	public static File planetFile = new File(resourceFolderAbsPath, PLANET_CSV_FILE);
+	public static File vehicleFile = new File(resourceFolderAbsPath, VEHICLE_CSV_FILE);
 
-static TransportationVehicleReader tv = new TransportationVehicleReader();
-static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DELIMITER);
+	static PlanetaryBodyReader pb = new PlanetaryBodyReader();
+	static ArrayList<PlanetaryBody> planetList = pb.readCSV(planetFile.getPath(), DELIMITER);
+
+	static TransportationVehicleReader tv = new TransportationVehicleReader();
+	static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(vehicleFile.getPath(), DELIMITER);
 
 	public static String[] getPlanetData() {
 		
@@ -52,7 +58,7 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		
 		return planetArray;
 	}
-	
+
 	public static String[] getVehicleData() {
 		
 		int vehicleArraySize = vehicleList.size();
@@ -261,6 +267,7 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 	}
 	
 	public static void main(String[] args) {
+		
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
 		double tripOneTimeArray[] = calculateTrip(pd);
 		double hours = tripOneTimeArray[0];
@@ -290,6 +297,7 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		pd.showModalDialog(modalMessageThree);
 		
 		//Get the results and format them
+		// tripOne details, tripTwo details, tripThree details - ship, starting dest, ending dest, distance, travel times for h, d, y
 		
 		// ToDo: make a message formatter to format all the results to a CSV
 		// Output to a CSV file with a random number between 1-21, formatted as <fixed><random>.csv (e.g. ProcessedData17.csv)
