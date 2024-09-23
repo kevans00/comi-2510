@@ -274,7 +274,7 @@ public class MainTest {
 	public static String buildFilename() {
 		String fixedName = "ProcessedData";
 		Random random = new Random();
-		int randomNumber = random.nextInt(21);
+		int randomNumber = random.nextInt(20) + 1; // Adding 1 as a hack because this function's range starts at 0
 		String filename = String.format("%s%s.csv", fixedName, randomNumber);
 		
 		return filename;
