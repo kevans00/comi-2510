@@ -188,28 +188,33 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 			// Do we calculate it anyway? return 0 kilometers?
 			double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
 			formatLogger("Distance: %s", distance);
-			pd.showModalDialog("You are already here!");
-			
 			return;
 		}
-		
-		double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
-		formatLogger("Distance: %s", distance);
 		
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
 		PlanetaryBody startingBody = getPlanet(startingPlanetName);
 		
-		double transportVehicleVelocity = vehicle.getMaxSpeed();
+		double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
+		formatLogger("Distance: %s", distance);
 		
 		double distSunOrigin = startingBody.getDistanceSun();
 		double orbitalPeriod = startingBody.getYearLength();
+		formatLogger("Origin body distance from the Sun: %s km", distSunOrigin);
+		formatLogger("Orbital period: %s days", orbitalPeriod);
 		
+		double transportVehicleVelocity = vehicle.getMaxSpeed();
 		double orbitalVelocity = calculateOrbitalVelocity(distSunOrigin, orbitalPeriod);
 		double gav = calculateGravityAssistVelocity(orbitalVelocity, transportVehicleVelocity);
-		//ToDo: Check speed against light speed?
+		formatLogger("Vehicle Velocity: %s km/hr", transportVehicleVelocity);
+		formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
+		formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
+		
+		//ToDo: Check speed against light speed and negative velocity
 
-		double tripTime = calculateTripTimeHours(gav, distance);
-		formatLogger("Trip time: %s hours", tripTime);
+		double tripTimeHours = calculateTripTimeHours(gav, distance);
+		double tripTimeDays = calculateTripTimeDays(gav, distance);
+		double tripTimeYears = calculateTriptimeYears(gav, distance);
+		formatLogger("Trip time: %s hours or %s days or %s years", tripTimeHours, tripTimeDays, tripTimeYears);
 		
 		//Get the results and format them
 		
