@@ -171,7 +171,7 @@ public class MainTest {
 		MainTest.logger.debug(logMessage);
 	}
 	
-	public static double[] doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
+	public static ArrayList<String> doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
 		
 		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) {
 			// ToDo: what do if startingPlanet == endingPlanet?
@@ -205,21 +205,24 @@ public class MainTest {
 			formatLogger("We have somehow broke through lightspeed! Achieved a speed of %s km/hr, but sadly this is wrong", gav);
 		}
 		
-		double timeArray[] = new double[3];
+		ArrayList tripDataArray = new ArrayList();
 		
 		double tripTimeHours = calculateTripTimeHours(gav, distance);
 		double tripTimeDays = calculateTripTimeDays(gav, distance);
 		double tripTimeYears = calculateTriptimeYears(gav, distance);
-		formatLogger("Trip time: %s hours; %s days;   %s years", tripTimeHours, tripTimeDays, tripTimeYears);
+		formatLogger("Trip time: %s hours; %s days; %s years", tripTimeHours, tripTimeDays, tripTimeYears);
 		
-		timeArray[0] = tripTimeHours;
-		timeArray[1] = tripTimeDays;
-		timeArray[2] = tripTimeYears;
+		tripDataArray.add(startingPlanetaryBody.getPlanetName());
+		tripDataArray.add(destPlanetaryBody.getPlanetName());
+		tripDataArray.add(distance);
+		tripDataArray.add(tripTimeHours);
+		tripDataArray.add(tripTimeDays);
+		tripDataArray.add(tripTimeYears);
 		
-		return timeArray;
+		return tripDataArray;
 	}
 	
-	public static double[] calculateTrip(PlanetaryDialog pd) {
+	public static ArrayList<String> calculateTrip(PlanetaryDialog pd) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
@@ -239,14 +242,13 @@ public class MainTest {
 		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
 		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 
-		double timeArray[] = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+		ArrayList tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
 
 		// ToDo: Handle the stop button
-		
-		return timeArray;
+		return tripDataArray;
 	}
 	
-	public static double[] calculateNextTrip(PlanetaryDialog pd, PlanetaryDialog pdPrevious) {
+	public static ArrayList<String> calculateNextTrip(PlanetaryDialog pd, PlanetaryDialog pdPrevious) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
@@ -266,9 +268,10 @@ public class MainTest {
 		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
 		formatLogger("Trip 2 - Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 		
-		double timeArray[] = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
-		
-		return timeArray;
+		ArrayList<String> tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+
+		// ToDo: Handle the stop button
+		return tripDataArray;
 	}
 	
 	public static String buildFilename() {
@@ -285,37 +288,56 @@ public class MainTest {
 		return "";
 	}
 	
-	public static void main(String[] args) {
-		String csvOutputHeader = buildFilename();
-		formatLogger("The new filename has %s", csvOutputHeader);
+	public static String makeCSVString(ArrayList<String> inputData) {
+		String outputData = new String();
+		outputData = String.format(
+				"%s,%s,%s,%s,%s,%s", 
+				inputData.get(0), // startingPlanetaryBody
+				inputData.get(1), // endingPlanetaryBody
+				inputData.get(2), // Distance between Bodies (km)
+				inputData.get(3), // Travel Time (hours)
+				inputData.get(4), // Travel Time (days)
+				inputData.get(5));// Travel Time (years)
 		
+		return outputData;
+	}
+	
+	public static void displayTripModalDialog(PlanetaryDialog pd, ArrayList<String> tripDataArray) {
+		// helper to display the final results of the trip
+		String modalMessageOne = String.format("This trip would take:\n %s hours\nor\n %s days\nor\n %s years", 
+				tripDataArray.get(3), tripDataArray.get(4), tripDataArray.get(5));
+		pd.showModalDialog(modalMessageOne);
+	}
+	
+	public static void main(String[] args) {
+		String csvOutputFilename = buildFilename();
+		formatLogger("The new filename has %s", csvOutputFilename);
+		
+		// Trip 1
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
-		double tripOneTimeArray[] = calculateTrip(pd);
-		double hours = tripOneTimeArray[0];
-		double days = tripOneTimeArray[1];
-		double years = tripOneTimeArray[2];
-		String modalMessage = String.format("The first trip would take %s hours or %s days or %s years", hours, days, years);
-		pd.showModalDialog(modalMessage);
-
+		ArrayList<String> tripOneDataArray = calculateTrip(pd);
+		String csvStringOne = makeCSVString(tripOneDataArray);
+		
+		formatLogger(csvStringOne);
+		displayTripModalDialog(pd, tripOneDataArray);
+		
 		// Trip 2
 		String newTripMessage = String.format("Trip 2 - Select next destination! We currently on %s and riding a %s", pd.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdSecondTrip = new PlanetaryDialog(newTripMessage);
-		double tripTwoTimeArray[] = calculateNextTrip(pdSecondTrip, pd);
-		double hoursTwo = tripTwoTimeArray[0];
-		double daysTwo = tripTwoTimeArray[1];
-		double yearsTwo = tripTwoTimeArray[2];
-		String modalMessageTwo = String.format("The second trip would take %s hours or %s days or %s years", hoursTwo, daysTwo, yearsTwo);
-		pd.showModalDialog(modalMessageTwo);
+		ArrayList<String> tripTwoDataArray = calculateNextTrip(pdSecondTrip, pd);
+		String csvStringTwo = makeCSVString(tripTwoDataArray);
 		
-		// ToDo: Trip #3 (basically repeat step 2)
+		formatLogger(csvStringTwo);
+		displayTripModalDialog(pdSecondTrip, tripTwoDataArray);
+		
+		// Trip #3
 		String newTripMessageThree = String.format("Trip 3 - Select next destination! We currently on %s and riding a %s", pdSecondTrip.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdFinalTrip = new PlanetaryDialog(newTripMessageThree);
-		double tripThreeTimeArray[] = calculateNextTrip(pdFinalTrip, pdSecondTrip);
-		double hoursThree = tripThreeTimeArray[0];
-		double daysThree = tripThreeTimeArray[1];
-		double yearsThree = tripThreeTimeArray[2];
-		String modalMessageThree = String.format("The third trip would take %s hours or %s days or %s years", hoursThree, daysThree, yearsThree);
-		pd.showModalDialog(modalMessageThree);
+		ArrayList<String> tripThreeDataArray = calculateNextTrip(pdFinalTrip, pdSecondTrip);
+		String csvStringThree = makeCSVString(tripThreeDataArray);
+		
+		formatLogger(csvStringThree);
+		displayTripModalDialog(pdFinalTrip, tripThreeDataArray);
 		
 		//Get the results and format them
 
