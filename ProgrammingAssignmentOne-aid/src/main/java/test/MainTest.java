@@ -1,6 +1,10 @@
 package test;
 
 import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.lang.Math;
 
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
@@ -10,7 +14,8 @@ import planets.planetai.PlanetaryBody;
 import planets.planetai.PlanetaryBodyReader;
 
 public class MainTest {
-	
+private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
+
 // ToDo: Make this get the CSV better
 public static final String PLANET_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\planetai\\\\planet_details.csv";
 public static final String VEHICLE_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\transportation\\\\vehicle_details.csv";
@@ -29,6 +34,8 @@ static ArrayList<PlanetaryBody> planetList = pb.readCSV(PLANET_CSV, DELIMITER);
 
 static TransportationVehicleReader tv = new TransportationVehicleReader();
 static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DELIMITER);
+
+static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 
 	public static String[] getPlanetData() {
 		
@@ -98,20 +105,18 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		return time; // in hours
 	}
 	
-	/*
-	public static double calculateRelativeDistance(double referenceObject, double objectOneDist, double objectTwoDist) {
-		
-		
-		if (referenceOjbect)
-		
-		double objectOneDistFromRef = 
-		Math.abs()
+	public static double calculateRelativeDistance(String startingPlanet, String endingPlanet) {	
+		// We are using the relative distance from the sun because this makes most sense; we cannot physically land on the sun
+		// so we do not have to account for any distance to/from it
+		//double distance = Math.abs(objectOneDist - objectTwoDist);
 		return 0.0;
-	}*/
+	}
+	
+	public static double calculateTripTime() {
+		return 0.0;
+	};
 	
 	public static void main(String[] args) {
-
-		PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
@@ -126,14 +131,19 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		String startingPlanet = pd.getStartingPlanetName();
 		String endingPlanet = pd.getDestinationPlanetName();
 		
+		// ToDo: what do if startingPlanet == endingPlanet?
+		
+		String choicesMessage = String.format("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanet, endingPlanet);
+		MainTest.logger.debug(choicesMessage);
+		
 		//New psuedocode:
-		//CalculateDistance();
+		//double distance = calculateRelativeDistance(startingPlanet, endingPlanet);
 		//CalculateTripTime();
 		//Handle other misc calculations
 		//Get the results and format them
 		
 		// ToDo: make a message formatter to format all the results?
-		pd.showModalDialog("test");
+		// pd.showModalDialog("test");
 		
 	}
 }
