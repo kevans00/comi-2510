@@ -1,7 +1,6 @@
 package test;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,9 +20,12 @@ private static final Logger logger = LogManager.getLogger(MainTest.class.getName
 public static final String PLANET_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\planetai\\\\planet_details.csv";
 public static final String VEHICLE_CSV = "C:\\\\Users\\\\Lenovo ThinkPad T430\\\\eclipse-workspace\\\\ProgrammingAssignmentOne-aid\\\\src\\\\main\\\\java\\\\planets\\\\transportation\\\\vehicle_details.csv";
 public static final String DELIMITER = ",";
+
 public static final int SECONDS_IN_A_DAY = 86400;
 public static final int HOURS_IN_A_DAY = 24;
 public static final int DAYS_IN_A_YEAR = 365;
+public static final int NUMBER_OF_TRIPS = 3; 
+
 public static final double METERS_TO_KILOMETERS_FACTOR = 3.6;
 public static final double KG_TO_LB_FACTOR = 2.2046;
 public static final double LN_TO_KG_FACTOR = 0.4536;
@@ -64,17 +66,17 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		return vehicleArray;
 	}
 	
-	public static double calculateOrbitalVelocity(double distFromSun, int orbitalPeriod) {
-		double orbitalVelocity = (METERS_TO_KILOMETERS_FACTOR * Math.sqrt((2 * Math.PI * distFromSun) / (orbitalPeriod * SECONDS_IN_A_DAY)));
-		
+	public static double calculateOrbitalVelocity(double distFromSunOrigin, double orbitalPeriodInDays) {
+		double orbitalVelocity = (METERS_TO_KILOMETERS_FACTOR * Math.sqrt((2 * Math.PI * distFromSunOrigin) / (orbitalPeriodInDays * SECONDS_IN_A_DAY)));
 		return orbitalVelocity; // returns in km/h
 	}
 	
-	public static double caculateGravityAssistVelocity(double orbitalVelocity, double transportVehicleVelocity) {
+	public static double calculateGravityAssistVelocity(double orbitalVelocity, double transportVehicleVelocity) {
 		double gav = (2 * orbitalVelocity) + transportVehicleVelocity;
-		return gav;
+		return gav; // returns in km/h
 	}
 	
+	/* Drag not required until future assignment
 	public static double calculateDrag(String planetBodyClass, double albeto, double orbitalEccentricity) {
 		
 		double albetoCoefficient = 0.0;
@@ -98,7 +100,7 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		double drag = albetoCoefficient + (albeto * orbitalEccentricity);
 		
 		return drag; // returns in km/h
-	}
+	}*/
 	
 	public static PlanetaryBody getPlanet(String planet) {
 		int arraySize = planetList.size();
@@ -124,7 +126,7 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		// so we do not have to account for any distance to/from it
 		double distance = Math.abs(planetBodyOne.getDistanceSun() - planetBodyTwo.getDistanceSun());
 		
-		return distance;
+		return distance; // in km
 	}
 	
 	public static TransportationVehicle getVehicle(String vehicle) {
@@ -175,34 +177,40 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		pd.showMultiEditDialog(planetData, vehicleData);
 		
 		String chosenVehicle = pd.getTransportationVechicleName();
-		String startingPlanet = pd.getStartingPlanetName();
-		String endingPlanet = pd.getDestinationPlanetName();
+		String startingPlanetName = pd.getStartingPlanetName();
+		String endingPlanetName = pd.getDestinationPlanetName();
 		
-		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanet, endingPlanet);
+		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, endingPlanetName);
 
-		if (startingPlanet == endingPlanet) {
+		if (startingPlanetName == endingPlanetName) {
 			// ToDo: what do if startingPlanet == endingPlanet?
 			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
 			// Do we calculate it anyway? return 0 kilometers?
-			double distance = calculateRelativeDistance(startingPlanet, endingPlanet);
+			double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
 			formatLogger("Distance: %s", distance);
 			pd.showModalDialog("You are already here!");
 			
 			return;
 		}
 		
-		double distance = calculateRelativeDistance(startingPlanet, endingPlanet);
+		double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
 		formatLogger("Distance: %s", distance);
 		
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
-		double velocity = vehicle.getMaxSpeed();
+		PlanetaryBody startingBody = getPlanet(startingPlanetName);
 		
+		double transportVehicleVelocity = vehicle.getMaxSpeed();
+		
+		double distSunOrigin = startingBody.getDistanceSun();
+		double orbitalPeriod = startingBody.getYearLength();
+		
+		double orbitalVelocity = calculateOrbitalVelocity(distSunOrigin, orbitalPeriod);
+		double gav = calculateGravityAssistVelocity(orbitalVelocity, transportVehicleVelocity);
 		//ToDo: Check speed against light speed?
-		
-		double tripTime = calculateTripTimeHours(velocity, distance);
+
+		double tripTime = calculateTripTimeHours(gav, distance);
 		formatLogger("Trip time: %s hours", tripTime);
 		
-		//Handle other misc calculations
 		//Get the results and format them
 		
 		// ToDo: make a message formatter to format all the results?
