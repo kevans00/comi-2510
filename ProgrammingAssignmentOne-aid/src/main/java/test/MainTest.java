@@ -38,8 +38,6 @@ static ArrayList<PlanetaryBody> planetList = pb.readCSV(PLANET_CSV, DELIMITER);
 static TransportationVehicleReader tv = new TransportationVehicleReader();
 static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DELIMITER);
 
-static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
-
 	public static String[] getPlanetData() {
 		
 		int planetArraySize = planetList.size();
@@ -160,45 +158,43 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 	}
 	
 	public static void formatLogger(String message, Object... args) {
-		// Combine formating and logging in one
+		// Helper method that combines formating and logging in one
 		String logMessage = String.format(message, args);
 		MainTest.logger.debug(logMessage);
 	}
 	
-	public static void main(String[] args) {
-		
+	public static double[] calculateTrip(PlanetaryDialog pd) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
 		pd.setUseTransporationVehicle();
 		pd.setUseStartingPlanet();
 		pd.setUseDestinationPlanet();
-
+		
 		pd.showMultiEditDialog(planetData, vehicleData);
 		
 		String chosenVehicle = pd.getTransportationVechicleName();
 		String startingPlanetName = pd.getStartingPlanetName();
-		String endingPlanetName = pd.getDestinationPlanetName();
-		
-		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, endingPlanetName);
+		String destPlanetName = pd.getDestinationPlanetName();
+		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 
-		if (startingPlanetName == endingPlanetName) {
+		if (startingPlanetName == destPlanetName) {
 			// ToDo: what do if startingPlanet == endingPlanet?
 			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
 			// Do we calculate it anyway? return 0 kilometers?
-			double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
+			double distance = calculateRelativeDistance(startingPlanetName, destPlanetName);
 			formatLogger("Distance: %s", distance);
-			return;
 		}
 		
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
-		PlanetaryBody startingBody = getPlanet(startingPlanetName);
+		PlanetaryBody startingPlanetaryBody = getPlanet(startingPlanetName);
+		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
 		
-		double distance = calculateRelativeDistance(startingPlanetName, endingPlanetName);
+		double distance = calculateRelativeDistance(startingPlanetName, destPlanetName);
 		formatLogger("Distance: %s", distance);
 		
-		double distSunOrigin = startingBody.getDistanceSun();
-		double orbitalPeriod = startingBody.getYearLength();
+		double distSunOrigin = startingPlanetaryBody.getDistanceSun();
+		double orbitalPeriod = startingPlanetaryBody.getYearLength();
 		formatLogger("Origin body distance from the Sun: %s km", distSunOrigin);
 		formatLogger("Orbital period: %s days", orbitalPeriod);
 		
@@ -209,17 +205,48 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
 		formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
 		
-		//ToDo: Check speed against light speed and negative velocity
-
+		//ToDo: Check speed against light speed and negative velocity; raise error message
+		
+		double timeArray[] = new double[3];
+		
 		double tripTimeHours = calculateTripTimeHours(gav, distance);
 		double tripTimeDays = calculateTripTimeDays(gav, distance);
 		double tripTimeYears = calculateTriptimeYears(gav, distance);
-		formatLogger("Trip time: %s hours or %s days or %s years", tripTimeHours, tripTimeDays, tripTimeYears);
+		formatLogger("Trip time: %s hours; %s days;   %s years", tripTimeHours, tripTimeDays, tripTimeYears);
+		
+		timeArray[0] = tripTimeHours;
+		timeArray[1] = tripTimeDays;
+		timeArray[2] = tripTimeYears;
+		
+		return timeArray;
+	}
+	
+	public static void main(String[] args) {
+		PlanetaryDialog pd = new PlanetaryDialog("Planetary Trip 1");
+		double tripOneTimeArray[] = calculateTrip(pd);
+		double hours = tripOneTimeArray[0];
+		double days = tripOneTimeArray[1];
+		double years = tripOneTimeArray[2];
+		
+		String modalMessage = String.format("The first trip would take %s hours or %s days or %s years", hours, days, years);
+		pd.showModalDialog(modalMessage);
+
+		PlanetaryDialog pdNextTrip = new PlanetaryDialog("Planetary Trip 2");
+		// ToDo: Redo calculateTripe but using the previous destination as the new starting destination, maybe create calculateNextTrip()?
+		double tripTwoTimeArray[] = calculateTrip(pdNextTrip);
+		double hoursTwo = tripTwoTimeArray[0];
+		double daysTwo = tripTwoTimeArray[1];
+		double yearsTwo = tripTwoTimeArray[2];
+		
+		String modalMessageTwo = String.format("The second trip would take %s hours or %s days or %s years", hoursTwo, daysTwo, yearsTwo);
+		pd.showModalDialog(modalMessageTwo);
+		
+		// ToDo: Trip #3 (basically repeat step 2)
 		
 		//Get the results and format them
 		
-		// ToDo: make a message formatter to format all the results?
-		// pd.showModalDialog("test");
+		// ToDo: make a message formatter to format all the results to a CSV
+		// Output to a CSV file with a random number between 1-21, formatted as <fixed><random>.csv (e.g. ProcessedData17.csv)
 		
 	}
 }
