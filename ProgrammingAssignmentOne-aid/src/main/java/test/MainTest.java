@@ -271,9 +271,8 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 
 		// Trip 2
 		String newTripMessage = String.format("Trip 2 - Select next destination! We currently on %s and riding a %s", pd.getDestinationPlanetName(), pd.getTransportationVechicleName());
-		PlanetaryDialog pdNextTrip = new PlanetaryDialog(newTripMessage);
-		// ToDo: Redo calculateTripe but using the previous destination as the new starting destination, maybe create calculateNextTrip()?
-		double tripTwoTimeArray[] = calculateNextTrip(pdNextTrip, pd);
+		PlanetaryDialog pdSecondTrip = new PlanetaryDialog(newTripMessage);
+		double tripTwoTimeArray[] = calculateNextTrip(pdSecondTrip, pd);
 		double hoursTwo = tripTwoTimeArray[0];
 		double daysTwo = tripTwoTimeArray[1];
 		double yearsTwo = tripTwoTimeArray[2];
@@ -281,6 +280,14 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		pd.showModalDialog(modalMessageTwo);
 		
 		// ToDo: Trip #3 (basically repeat step 2)
+		String newTripMessageThree = String.format("Trip 3 - Select next destination! We currently on %s and riding a %s", pdSecondTrip.getDestinationPlanetName(), pd.getTransportationVechicleName());
+		PlanetaryDialog pdFinalTrip = new PlanetaryDialog(newTripMessageThree);
+		double tripThreeTimeArray[] = calculateNextTrip(pdFinalTrip, pdSecondTrip);
+		double hoursThree = tripThreeTimeArray[0];
+		double daysThree = tripThreeTimeArray[1];
+		double yearsThree = tripThreeTimeArray[2];
+		String modalMessageThree = String.format("The third trip would take %s hours or %s days or %s years", hoursThree, daysThree, yearsThree);
+		pd.showModalDialog(modalMessageThree);
 		
 		//Get the results and format them
 		
