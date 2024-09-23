@@ -32,6 +32,8 @@ public static final double LN_TO_KG_FACTOR = 0.4536;
 public static final double KM_TO_MI_FACTOR = 0.6214;
 public static final double MI_TO_KM_FACTOR = 1.6093;
 
+public static final double SPEED_OF_LIGHT = 1080000000; // km/hr
+
 static PlanetaryBodyReader pb = new PlanetaryBodyReader();
 static ArrayList<PlanetaryBody> planetList = pb.readCSV(PLANET_CSV, DELIMITER);
 
@@ -160,27 +162,9 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		MainTest.logger.debug(logMessage);
 	}
 	
-	public static double[] calculateTrip(PlanetaryDialog pd) {
-		String[] planetData = getPlanetData();
-		String[] vehicleData = getVehicleData();
+	public static double[] doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
 		
-		pd.setUseTransporationVehicle();
-		pd.setUseStartingPlanet();
-		pd.setUseDestinationPlanet();
-		
-		pd.showMultiEditDialog(planetData, vehicleData);
-		
-		String chosenVehicle = pd.getTransportationVechicleName();
-		String startingPlanetName = pd.getStartingPlanetName();
-		String destPlanetName = pd.getDestinationPlanetName();
-		
-		// Create objects for the chosen vehicle and bodies
-		TransportationVehicle vehicle = getVehicle(chosenVehicle);
-		PlanetaryBody startingPlanetaryBody = getPlanet(startingPlanetName);
-		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
-		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
-
-		if (startingPlanetName == destPlanetName) {
+		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) {
 			// ToDo: what do if startingPlanet == endingPlanet?
 			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
 			// Do we calculate it anyway? return 0 kilometers?
@@ -203,7 +187,14 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
 		formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
 		
-		//ToDo: Check speed against light speed and negative velocity; raise error message
+		if (gav < 0) {
+			// ToDo: Handle negative velocity with a `catch`
+			formatLogger("We cannot have a negative velocity! Calculated value has %s km/hr, (are we going backwards?)", gav);
+		}
+		else if (gav >= SPEED_OF_LIGHT) {
+			// ToDo: Handle exceeding lightspeed with a `catch`
+			formatLogger("We have somehow broke through lightspeed! Achieved a speed of %s km/hr, but sadly this is wrong", gav);
+		}
 		
 		double timeArray[] = new double[3];
 		
@@ -215,6 +206,31 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		timeArray[0] = tripTimeHours;
 		timeArray[1] = tripTimeDays;
 		timeArray[2] = tripTimeYears;
+		
+		return timeArray;
+	}
+	
+	public static double[] calculateTrip(PlanetaryDialog pd) {
+		String[] planetData = getPlanetData();
+		String[] vehicleData = getVehicleData();
+		
+		pd.setUseTransporationVehicle();
+		pd.setUseStartingPlanet();
+		pd.setUseDestinationPlanet();
+		
+		pd.showMultiEditDialog(planetData, vehicleData);
+		
+		String chosenVehicle = pd.getTransportationVechicleName();
+		String startingPlanetName = pd.getStartingPlanetName();
+		String destPlanetName = pd.getDestinationPlanetName();
+		
+		// Create objects for the chosen vehicle and bodies
+		TransportationVehicle vehicle = getVehicle(chosenVehicle);
+		PlanetaryBody startingPlanetaryBody = getPlanet(startingPlanetName);
+		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
+		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
+
+		double timeArray[] = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
 		
 		return timeArray;
 	}
@@ -239,44 +255,11 @@ static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(VEHICLE_CSV, DE
 		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
 		formatLogger("Trip 2 - Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 		
-		if (startingPlanetName == destPlanetName) {
-			// ToDo: what do if startingPlanet == endingPlanet?
-			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
-			// Do we calculate it anyway? return 0 kilometers?
-			double distance = calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
-			formatLogger("Distance: %s", distance);
-		}
-		
-		double distance = calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
-		formatLogger("Distance: %s", distance);
-		
-		double distSunOrigin = startingPlanetaryBody.getDistanceSun();
-		double orbitalPeriod = startingPlanetaryBody.getYearLength();
-		formatLogger("Origin body distance from the Sun: %s km", distSunOrigin);
-		formatLogger("Orbital period: %s days", orbitalPeriod);
-		
-		double transportVehicleVelocity = vehicle.getMaxSpeed();
-		double orbitalVelocity = calculateOrbitalVelocity(distSunOrigin, orbitalPeriod);
-		double gav = calculateGravityAssistVelocity(orbitalVelocity, transportVehicleVelocity);
-		formatLogger("Vehicle Velocity: %s km/hr", transportVehicleVelocity);
-		formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
-		formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
-		
-		//ToDo: Check speed against light speed and negative velocity; raise error message
-		
-		double timeArray[] = new double[3];
-		
-		double tripTimeHours = calculateTripTimeHours(gav, distance);
-		double tripTimeDays = calculateTripTimeDays(gav, distance);
-		double tripTimeYears = calculateTriptimeYears(gav, distance);
-		formatLogger("Trip time: %s hours; %s days;   %s years", tripTimeHours, tripTimeDays, tripTimeYears);
-		
-		timeArray[0] = tripTimeHours;
-		timeArray[1] = tripTimeDays;
-		timeArray[2] = tripTimeYears;
+		double timeArray[] = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
 		
 		return timeArray;
 	}
+	
 	public static void main(String[] args) {
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
 		double tripOneTimeArray[] = calculateTrip(pd);
