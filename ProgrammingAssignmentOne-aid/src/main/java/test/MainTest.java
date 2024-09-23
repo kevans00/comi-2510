@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -105,16 +106,42 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		return time; // in hours
 	}
 	
+	public static PlanetaryBody getPlanet(String planet) {
+		int arraySize = planetList.size();
+		PlanetaryBody matchedPlanet = null;
+		
+		for (int i = 0; i < arraySize; i++ ) {
+			PlanetaryBody entry = planetList.get(i);
+			
+			if (entry.getPlanetName() == planet) {
+				matchedPlanet = planetList.get(i);
+			}
+		}
+		
+		return matchedPlanet;
+	}
+	
 	public static double calculateRelativeDistance(String startingPlanet, String endingPlanet) {	
+
+		PlanetaryBody planetBodyOne = getPlanet(startingPlanet);
+		PlanetaryBody planetBodyTwo = getPlanet(endingPlanet);
+		
 		// We are using the relative distance from the sun because this makes most sense; we cannot physically land on the sun
 		// so we do not have to account for any distance to/from it
-		//double distance = Math.abs(objectOneDist - objectTwoDist);
-		return 0.0;
+		double distance = Math.abs(planetBodyOne.getDistanceSun() - planetBodyTwo.getDistanceSun());
+		
+		return distance;
 	}
 	
 	public static double calculateTripTime() {
 		return 0.0;
 	};
+	
+	public static void formatLogger(String message, Object... args) {
+		// Combine formating and logging in one
+		String logMessage = String.format(message, args);
+		MainTest.logger.debug(logMessage);
+	}
 	
 	public static void main(String[] args) {
 		
@@ -131,13 +158,20 @@ static PlanetaryDialog pd = new PlanetaryDialog("Planetary Body Calculator");
 		String startingPlanet = pd.getStartingPlanetName();
 		String endingPlanet = pd.getDestinationPlanetName();
 		
-		// ToDo: what do if startingPlanet == endingPlanet?
-		
-		String choicesMessage = String.format("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanet, endingPlanet);
-		MainTest.logger.debug(choicesMessage);
+		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanet, endingPlanet);
+
+		if (startingPlanet == endingPlanet) {
+			// ToDo: what do if startingPlanet == endingPlanet?
+			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
+			// Do we calculate it anyway? return 0 kilometers?
+			double distance = calculateRelativeDistance(startingPlanet, endingPlanet);
+			formatLogger("Distance: %s", distance);
+			pd.showModalDialog("You are already here!");
+			
+			return;
+		}
 		
 		//New psuedocode:
-		//double distance = calculateRelativeDistance(startingPlanet, endingPlanet);
 		//CalculateTripTime();
 		//Handle other misc calculations
 		//Get the results and format them
