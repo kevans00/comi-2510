@@ -3,7 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.lang.Math;
 import java.io.File;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -240,6 +240,8 @@ public class MainTest {
 		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 
 		double timeArray[] = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+
+		// ToDo: Handle the stop button
 		
 		return timeArray;
 	}
@@ -271,7 +273,8 @@ public class MainTest {
 	
 	public static String buildFilename() {
 		String fixedName = "ProcessedData";
-		int randomNumber = ThreadLocalRandom.current().nextInt(MIN_FILE_NUMBER, MAX_FILE_NUMBER + 1);
+		Random random = new Random();
+		int randomNumber = random.nextInt(21);
 		String filename = String.format("%s%s.csv", fixedName, randomNumber);
 		
 		return filename;
