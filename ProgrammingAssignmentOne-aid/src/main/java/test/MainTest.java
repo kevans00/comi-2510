@@ -9,12 +9,15 @@ import java.io.FileWriter;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.commons.lang3.exception.*;
 
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
 import planets.transportation.TransportationVehicle;
 import planets.transportation.TransportationVehicleReader;
 import planets.planetai.PlanetaryBody;
 import planets.planetai.PlanetaryBodyReader;
+import planets.util.PlanetaryConstants;
+import planets.util.TravelCalculator;
 
 public class MainTest {
 	private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
@@ -37,6 +40,8 @@ public class MainTest {
 
 	static TransportationVehicleReader tv = new TransportationVehicleReader();
 	static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(vehicleFile.getPath(), DELIMITER);
+	
+	static TravelCalculator tc = new TravelCalculator();
 
 	public static String[] getPlanetData() {
 		
@@ -64,16 +69,9 @@ public class MainTest {
 		return vehicleArray;
 	}
 	
-	public static double calculateOrbitalVelocity(double distFromSunOrigin, double orbitalPeriodInDays) {
-		double orbitalVelocity = (METERS_TO_KILOMETERS_FACTOR * Math.sqrt((2 * Math.PI * distFromSunOrigin) / (orbitalPeriodInDays * SECONDS_IN_A_DAY)));
-		return orbitalVelocity; // returns in km/h
-	}
 	
-	public static double calculateGravityAssistVelocity(double orbitalVelocity, double transportVehicleVelocity) {
-		double gav = (2 * orbitalVelocity) + transportVehicleVelocity;
-		return gav; // returns in km/h
-	}
 	
+
 	/* Drag not required until future assignment
 	public static double calculateDrag(String planetBodyClass, double albeto, double orbitalEccentricity) {
 		
@@ -117,12 +115,7 @@ public class MainTest {
 		return matchedPlanet;
 	}
 	
-	public static double calculateRelativeDistance(PlanetaryBody startingPlanet, PlanetaryBody endingPlanet) {	
-		// We are using the relative distance from the sun because this makes most sense; we cannot physically land on the sun
-		// so we do not have to account for any distance to/from it
-		double distance = Math.abs(startingPlanet.getDistanceSun() - endingPlanet.getDistanceSun());
-		return distance; // in km
-	}
+
 	
 	public static TransportationVehicle getVehicle(String vehicle) {
 		int arraySize = vehicleList.size();
@@ -139,20 +132,9 @@ public class MainTest {
 		return matchedVehicle;
 	}
 	
-	public static double calculateTripTimeHours(double velocity, double distance) {
-		double time = distance / velocity; // km and km/hr
-		return time; // in hours
-	}
 	
-	public static double calculateTripTimeDays(double velocity, double distance) {
-		double time = calculateTripTimeHours(velocity, distance) / HOURS_IN_A_DAY;
-		return time; // in days
-	}
 	
-	public static double calculateTriptimeYears(double velocity, double distance) {
-		double time = calculateTripTimeDays(velocity, distance) / DAYS_IN_A_YEAR;
-		return time; // in years
-	}
+
 	
 	public static void formatLogger(String message, Object... args) {
 		// Helper method that combines formating and logging in one
@@ -162,15 +144,15 @@ public class MainTest {
 	
 	public static ArrayList<String> doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
 		
-		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) { //Fix bug here; startingPlanetaryBody is null
+		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) { //ToDo: Fix bug here; startingPlanetaryBody is null
 			// ToDo: what do if startingPlanet == endingPlanet?
 			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
 			// Do we calculate it anyway? return 0 kilometers?
-			double distance = calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
+			double distance = TravelCalculator.calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
 			formatLogger("Distance: %s", distance);
 		}
 		
-		double distance = calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
+		double distance = TravelCalculator.calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
 		formatLogger("Distance: %s", distance);
 		
 		double distSunOrigin = startingPlanetaryBody.getDistanceSun();
@@ -179,8 +161,8 @@ public class MainTest {
 		formatLogger("Orbital period: %s days", orbitalPeriod);
 		
 		double transportVehicleVelocity = vehicle.getMaxSpeed();
-		double orbitalVelocity = calculateOrbitalVelocity(distSunOrigin, orbitalPeriod);
-		double gav = calculateGravityAssistVelocity(orbitalVelocity, transportVehicleVelocity);
+		double orbitalVelocity = TravelCalculator.calculateOrbitalVelocity(distSunOrigin, orbitalPeriod);
+		double gav = TravelCalculator.calculateGravityAssistVelocity(orbitalVelocity, transportVehicleVelocity);
 		formatLogger("Vehicle Velocity: %s km/hr", transportVehicleVelocity);
 		formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
 		formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
@@ -189,16 +171,16 @@ public class MainTest {
 			// ToDo: Handle negative velocity with a `catch`
 			formatLogger("We cannot have a negative velocity! Calculated value has %s km/hr, (are we going backwards?)", gav);
 		}
-		else if (gav >= SPEED_OF_LIGHT) {
+		else if (gav >= PlanetaryConstants.SPEED_OF_LIGHT) {
 			// ToDo: Handle exceeding lightspeed with a `catch`
 			formatLogger("We have somehow broke through lightspeed! Achieved a speed of %s km/hr, but sadly this is wrong", gav);
 		}
 		
 		ArrayList tripDataArray = new ArrayList();
 		
-		double tripTimeHours = calculateTripTimeHours(gav, distance);
-		double tripTimeDays = calculateTripTimeDays(gav, distance);
-		double tripTimeYears = calculateTriptimeYears(gav, distance);
+		double tripTimeHours = TravelCalculator.calculateTripTimeHours(gav, distance);
+		double tripTimeDays = TravelCalculator.calculateTripTimeDays(gav, distance);
+		double tripTimeYears = TravelCalculator.calculateTriptimeYears(gav, distance);
 		formatLogger("Trip time: %s hours; %s days; %s years", tripTimeHours, tripTimeDays, tripTimeYears);
 		
 		tripDataArray.add(startingPlanetaryBody.getPlanetName());
