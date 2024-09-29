@@ -27,18 +27,6 @@ public class MainTest {
 	public static final int MIN_FILE_NUMBER = 1;
 	public static final int MAX_FILE_NUMBER = 21;	
 
-	public static final int SECONDS_IN_A_DAY = 86400;
-	public static final int HOURS_IN_A_DAY = 24;
-	public static final int DAYS_IN_A_YEAR = 365;
-
-	public static final double METERS_TO_KILOMETERS_FACTOR = 3.6;
-	public static final double KG_TO_LB_FACTOR = 2.2046;
-	public static final double LN_TO_KG_FACTOR = 0.4536;
-	public static final double KM_TO_MI_FACTOR = 0.6214;
-	public static final double MI_TO_KM_FACTOR = 1.6093;
-
-	public static final double SPEED_OF_LIGHT = 1080000000; // km/hr
-
 	public static String resourceFolderAbsPath = new File(RESOURCE_PATH).getAbsolutePath();
 	public static String outputFolderAbsPath = new File(OUTPUT_PATH).getAbsolutePath();
 	public static File planetFile = new File(resourceFolderAbsPath, PLANET_CSV_FILE);
