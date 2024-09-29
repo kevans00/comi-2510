@@ -1,6 +1,9 @@
 package planets.transportation;
 import java.util.ArrayList;
 
+/**
+ * This class tests the TransportationVehicleReader object to ensure it works properly
+ */
 public class TransportationVehicleTest {
 	public static void main(String[] args) {
 		

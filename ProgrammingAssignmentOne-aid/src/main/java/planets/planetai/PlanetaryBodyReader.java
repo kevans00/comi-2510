@@ -7,12 +7,24 @@ import java.util.ArrayList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * This class creates a PlanetaryBodyReader object that reads CSV files into an ArrayList
+ */
 public class PlanetaryBodyReader {
 	
 	private static final Logger logger = LogManager.getLogger(PlanetaryBodyReader.class.getName());
 	
+	/**
+	 * Default Constructor
+	 */
 	public PlanetaryBodyReader() {}
 	
+	/**
+	 * This method opens a CSV file to read and assigns the proper fields to an Array of PlanetaryBody objects
+	 * @param csvFile
+	 * @param delimiter
+	 * @return list
+	 */
 	public ArrayList<PlanetaryBody> readCSV(String csvFile, String delimiter){
 		ArrayList<PlanetaryBody> list = new ArrayList<PlanetaryBody>();
 		PlanetaryBody detail = null;

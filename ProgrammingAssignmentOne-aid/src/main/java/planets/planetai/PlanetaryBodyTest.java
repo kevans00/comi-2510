@@ -8,6 +8,10 @@ public class PlanetaryBodyTest {
 	
 private static final Logger logger = LogManager.getLogger(PlanetaryBodyTest.class.getName());
 
+/**
+ * This is a test of the PlanetaryBodyReader class to ensure it runs correctly
+ * @param args
+ */
 public static void main(String[] args) {
 	
 		final String DELIMITER = ",";

@@ -7,12 +7,24 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.LineNumberReader;
 
+/**
+ * This class creates a TransportationVehicleReader object that reads CSV files into an Array List
+ */
 public class TransportationVehicleReader {
 
 	private static final Logger logger = LogManager.getLogger(TransportationVehicleReader.class.getName());
 	
+	/**
+	 * Default constructor
+	 */
 	public TransportationVehicleReader() {}
 	
+	/**
+	 * This method opens a CSV file to read and assigns the proper fields to an Array of TransportationVehicle objects
+	 * @param csvFile
+	 * @param delimiter
+	 * @return list
+	 */
 	public ArrayList<TransportationVehicle> readCSV(String csvFile, String delimiter){
 		ArrayList<TransportationVehicle> list = new ArrayList<TransportationVehicle>();
 		TransportationVehicle detail = null;
