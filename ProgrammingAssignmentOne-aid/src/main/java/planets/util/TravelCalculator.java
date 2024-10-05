@@ -38,6 +38,8 @@ public class TravelCalculator {
 		return time; // in years
 	}
 	
+	//Calculate
+	
 	
 
 }
