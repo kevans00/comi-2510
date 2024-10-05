@@ -3,7 +3,7 @@ package planets.transportation;
 /**
  * This class creates a TransportationVehicle object
  */
-public class TransportationVehicle {
+public abstract class TransportationVehicle {
 	String vehicleName;
 	String vehicleClassification;
 	double maxWeight;
@@ -186,4 +186,10 @@ public class TransportationVehicle {
 		this.setFoodCost(foodCost);
 		this.setSalary(salary);
 	}
+	
+	public abstract double getMealsPerDay();
+	
+	public abstract int getPayHoursPerDay();
+	
+	
 }
