@@ -14,10 +14,14 @@ import org.apache.commons.lang3.exception.*;
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
 import planets.transportation.TransportationVehicle;
 import planets.transportation.TransportationVehicleReader;
+import planets.transportation.CrewCalculator;
 import planets.planetai.PlanetaryBody;
 import planets.planetai.PlanetaryBodyReader;
 import planets.util.PlanetaryConstants;
 import planets.util.TravelCalculator;
+import planets.util.EasyDebugLogger;
+import planets.util.TripFileIO;
+import planets.util.PlanetaryConversions;
 
 public class MainTest {
 	private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
@@ -30,8 +34,8 @@ public class MainTest {
 	public static final int MIN_FILE_NUMBER = 1;
 	public static final int MAX_FILE_NUMBER = 21;	
 
-	public static String resourceFolderAbsPath = new File(RESOURCE_PATH).getAbsolutePath();
-	public static String outputFolderAbsPath = new File(OUTPUT_PATH).getAbsolutePath();
+	public static String resourceFolderAbsPath = new File(PlanetaryConstants.RESOURCE_PATH).getAbsolutePath();
+	public static String outputFolderAbsPath = new File(PlanetaryConstants.OUTPUT_PATH).getAbsolutePath();
 	public static File planetFile = new File(resourceFolderAbsPath, PLANET_CSV_FILE);
 	public static File vehicleFile = new File(resourceFolderAbsPath, VEHICLE_CSV_FILE);
 
@@ -42,20 +46,27 @@ public class MainTest {
 	static ArrayList<TransportationVehicle> vehicleList = tv.readCSV(vehicleFile.getPath(), DELIMITER);
 	
 	static TravelCalculator tc = new TravelCalculator();
-
+	static EasyDebugLogger log = new EasyDebugLogger();
+	static TripFileIO io = new TripFileIO();
+	static CrewCalculator cc = new CrewCalculator();
+	static PlanetaryConversions pc = new PlanetaryConversions();
+	
 	public static String[] getPlanetData() {
 		
 		int planetArraySize = planetList.size();
+		//String planetaryClass = planetList.;
 		String planetArray[] = new String[planetArraySize];
-		
+
 		for (int i=0; i < planetArraySize; i++) {
 			PlanetaryBody entry = planetList.get(i);
+			log.formatLogger("Entry has %s", entry);
 			planetArray[i] = entry.getPlanetName();
 		}
 		
 		return planetArray;
 	}
 
+	
 	public static String[] getVehicleData() {
 		
 		int vehicleArraySize = vehicleList.size();
@@ -68,35 +79,7 @@ public class MainTest {
 		
 		return vehicleArray;
 	}
-	
-	
-	
 
-	/* Drag not required until future assignment
-	public static double calculateDrag(String planetBodyClass, double albeto, double orbitalEccentricity) {
-		
-		double albetoCoefficient = 0.0;
-		
-		if (planetBodyClass == "Planet") {
-			albetoCoefficient = 0.1;
-		}
-		
-		if (planetBodyClass == "Dwarf planet") {
-			albetoCoefficient = 0.35;
-		}
-		
-		if (planetBodyClass == "Moon") {
-			albetoCoefficient = 0.75;
-		}
-		
-		else {
-			return albeto * orbitalEccentricity;
-		}
-		
-		double drag = albetoCoefficient + (albeto * orbitalEccentricity);
-		
-		return drag; // returns in km/h
-	}*/
 	
 	public static PlanetaryBody getPlanet(String planet) {
 		int arraySize = planetList.size();
@@ -104,10 +87,10 @@ public class MainTest {
 		
 		for (int i = 0; i < arraySize; i++ ) {
 			PlanetaryBody entry = planetList.get(i);
-			formatLogger("Checking line %s for PlanetaryBody %s, found %s", i, planet, entry.getPlanetName());
+			log.formatLogger("Checking line %s for PlanetaryBody %s, found %s", i, planet, entry.getPlanetName());
 			if (entry.getPlanetName() == planet) {
 				matchedPlanet = planetList.get(i);
-				formatLogger("Found match for %s on line %s", matchedPlanet, i);
+				log.formatLogger("Found match for %s on line %s", matchedPlanet, i);
 				break;
 			}
 		}
@@ -116,7 +99,6 @@ public class MainTest {
 	}
 	
 
-	
 	public static TransportationVehicle getVehicle(String vehicle) {
 		int arraySize = vehicleList.size();
 		TransportationVehicle matchedVehicle = null;
@@ -133,55 +115,69 @@ public class MainTest {
 	}
 	
 	
-	
-
-	
-	public static void formatLogger(String message, Object... args) {
-		// Helper method that combines formating and logging in one
-		String logMessage = String.format(message, args);
-		MainTest.logger.debug(logMessage);
-	}
-	
-	public static ArrayList<String> doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
+	public static ArrayList<Object> doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
 		
 		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) { //ToDo: Fix bug here; startingPlanetaryBody is null
-			// ToDo: what do if startingPlanet == endingPlanet?
-			// Maybe we call showMultiEditDialog again and ask for user to select new choices? 
-			// Do we calculate it anyway? return 0 kilometers?
 			double distance = TravelCalculator.calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
-			formatLogger("Distance: %s", distance);
+			log.formatLogger("Distance: %s", distance);
 		}
 		
 		double distance = TravelCalculator.calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
-		formatLogger("Distance: %s", distance);
+		log.formatLogger("Distance: %s", distance);
 		
 		double distSunOrigin = startingPlanetaryBody.getDistanceSun();
 		double orbitalPeriod = startingPlanetaryBody.getYearLength();
-		formatLogger("Origin body distance from the Sun: %s km", distSunOrigin);
-		formatLogger("Orbital period: %s days", orbitalPeriod);
+		log.formatLogger("Origin body distance from the Sun: %s km", distSunOrigin);
+		log.formatLogger("Orbital period: %s days", orbitalPeriod);
 		
 		double transportVehicleVelocity = vehicle.getMaxSpeed();
 		double orbitalVelocity = TravelCalculator.calculateOrbitalVelocity(distSunOrigin, orbitalPeriod);
 		double gav = TravelCalculator.calculateGravityAssistVelocity(orbitalVelocity, transportVehicleVelocity);
-		formatLogger("Vehicle Velocity: %s km/hr", transportVehicleVelocity);
-		formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
-		formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
+		log.formatLogger("Vehicle Velocity: %s km/hr", transportVehicleVelocity);
+		log.formatLogger("Orbital Velocity: %s km/hr", orbitalVelocity);
+		log.formatLogger("Gravitational Assist Velocity: %s km/hr", gav);
 		
 		if (gav < 0) {
 			// ToDo: Handle negative velocity with a `catch`
-			formatLogger("We cannot have a negative velocity! Calculated value has %s km/hr, (are we going backwards?)", gav);
+			log.formatLogger("We cannot have a negative velocity! Calculated value has %s km/hr, (are we going backwards?)", gav);
 		}
 		else if (gav >= PlanetaryConstants.SPEED_OF_LIGHT) {
 			// ToDo: Handle exceeding lightspeed with a `catch`
-			formatLogger("We have somehow broke through lightspeed! Achieved a speed of %s km/hr, but sadly this is wrong", gav);
+			log.formatLogger("We have somehow broke through lightspeed! Achieved a speed of %s km/hr, but sadly this is wrong", gav);
 		}
 		
-		ArrayList tripDataArray = new ArrayList();
+		ArrayList<Object> tripDataArray = new ArrayList<Object>();
 		
 		double tripTimeHours = TravelCalculator.calculateTripTimeHours(gav, distance);
 		double tripTimeDays = TravelCalculator.calculateTripTimeDays(gav, distance);
 		double tripTimeYears = TravelCalculator.calculateTriptimeYears(gav, distance);
-		formatLogger("Trip time: %s hours; %s days; %s years", tripTimeHours, tripTimeDays, tripTimeYears);
+		log.formatLogger("Trip time: %s hours; %s days; %s years", tripTimeHours, tripTimeDays, tripTimeYears);
+		
+		double crewMembers = vehicle.getCrew();
+		log.formatLogger("There are: %s crew members", crewMembers);
+		double hourlyWage = vehicle.getSalary();
+		log.formatLogger("Hourly wage per crew member is: %s", hourlyWage);
+		double mealsPerDay = vehicle.getMealsPerDay();
+		log.formatLogger("Number of meals per day: %s", mealsPerDay);
+		int payHoursPerDay = vehicle.getPayHoursPerDay();
+		log.formatLogger("Number of paid hours for %s per day: %s", vehicle.getVehicleName(), payHoursPerDay);
+		
+		
+		double crewTotalPay = CrewCalculator.calculateCrewTotalSalary(crewMembers, hourlyWage, tripTimeDays, payHoursPerDay);
+		log.formatLogger("Total crew salary for %s crew members is $%s", crewMembers, crewTotalPay);
+		double dailyFoodCost = CrewCalculator.calculateCrewFoodCost(crewMembers, transportVehicleVelocity, orbitalVelocity, mealsPerDay);
+		log.formatLogger("Daily food cost for %s crew members is $ %s", crewMembers, dailyFoodCost);
+		double crewTotalPayEuro = pc.MetricToImperialConversions(crewTotalPay);
+		log.formatLogger("Total crew salary in Euros for %s crew members is €%s", crewMembers, crewTotalPayEuro);
+		
+		if (crewTotalPay > 1000000) {
+			// ToDo: Handle excess salary
+			log.formatLogger("The total pay of %s exceeds the maximum allowed value of $1,000,000", crewTotalPay);
+			}
+		else if (crewTotalPay < 0) {
+			// ToDo
+			log.formatLogger("The total pay of %s is negative - must get paid something.", crewTotalPay);
+			}
 		
 		tripDataArray.add(startingPlanetaryBody.getPlanetName());
 		tripDataArray.add(destPlanetaryBody.getPlanetName());
@@ -189,11 +185,14 @@ public class MainTest {
 		tripDataArray.add(tripTimeHours);
 		tripDataArray.add(tripTimeDays);
 		tripDataArray.add(tripTimeYears);
+		tripDataArray.add(crewMembers);
+		tripDataArray.add(crewTotalPay);
+		tripDataArray.add(crewTotalPayEuro);
 		
 		return tripDataArray;
 	}
 	
-	public static ArrayList<String> calculateTrip(PlanetaryDialog pd) {
+	public static ArrayList<Object> calculateTrip(PlanetaryDialog pd) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
@@ -207,19 +206,23 @@ public class MainTest {
 		String startingPlanetName = pd.getStartingPlanetName();
 		String destPlanetName = pd.getDestinationPlanetName();
 		
+		
 		// Create objects for the chosen vehicle and bodies
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
 		PlanetaryBody startingPlanetaryBody = getPlanet(startingPlanetName);
 		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
-		formatLogger("Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
+		
+		double crewMembers = vehicle.getCrew();
+		
+		log.formatLogger("Chosen vehicle: %s; starting planet %s; ending %s; crew members %s", chosenVehicle, startingPlanetName, destPlanetName, crewMembers);
 
-		ArrayList tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+		ArrayList<Object> tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
 
 		// ToDo: Handle the stop button
 		return tripDataArray;
 	}
 	
-	public static ArrayList<String> calculateNextTrip(PlanetaryDialog pd, PlanetaryDialog pdPrevious) {
+	public static ArrayList<Object> calculateNextTrip(PlanetaryDialog pd, PlanetaryDialog pdPrevious) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
@@ -237,117 +240,58 @@ public class MainTest {
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
 		PlanetaryBody startingPlanetaryBody = getPlanet(startingPlanetName);
 		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
-		formatLogger("Trip 2 - Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
+		log.formatLogger("Trip 2 - Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 		
-		ArrayList<String> tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+		ArrayList<Object> tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
 
 		// ToDo: Handle the stop button
 		return tripDataArray;
 	}
 	
-	public static String buildFilename() {
-		String fixedName = "ProcessedData";
-		Random random = new Random();
-		int randomNumber = random.nextInt(MAX_FILE_NUMBER) + 1; // Adding 1 as a hack because this function's range is [0, 21)
-		String filename = String.format("%s%s.csv", fixedName, randomNumber);
-		
-		return filename;
-	}
 	
-	public static void writeToCSVFile(String filename, String data) {
-	    try {
-	        FileWriter writer = new FileWriter(filename, true);
-	        writer.write(data); // Does this automatically append to a new line?
-	        writer.close();
-	        formatLogger("Successfully wrote contents to '%s'", filename);
-	        System.out.println("Successfully wrote to the file.");
-	    } 
-	    catch (IOException e) {
-	        System.out.println(e);
-	        e.printStackTrace();
-	      }
-	}
-	
-	public static String createCSVFile() {
-		String fileName = buildFilename();
-		formatLogger("New Filename has %s", fileName);
-		
-		// Check if file exists. If not, then create it
-		String filePath = OUTPUT_PATH + fileName;
-        try { 
-            File f = new File(filePath); 
-  
-            if (f.createNewFile()) 
-            	formatLogger("File Created at %s", filePath);
-
-            else
-                formatLogger("Filename '%s' already exists", fileName); 
-            	//createCSVFile(); // Try again
-        } 
-        catch (IOException e) { 
-            System.err.println(e); 
-            e.printStackTrace();
-        }
-        
-        return filePath;
-	}
-	
-	public static String makeCSVString(ArrayList<String> inputData) {
-		String outputData = new String();
-		outputData = String.format(
-				"%s,%s,%s,%s,%s,%s", 
-				inputData.get(0), // startingPlanetaryBody
-				inputData.get(1), // endingPlanetaryBody
-				inputData.get(2), // Distance between Bodies (km)
-				inputData.get(3), // Travel Time (hours)
-				inputData.get(4), // Travel Time (days)
-				inputData.get(5));// Travel Time (years)
-		
-		return outputData;
-	}
-	
-	public static void displayTripModalDialog(PlanetaryDialog pd, ArrayList<String> tripDataArray) {
+	public static void displayTripModalDialog(PlanetaryDialog pd, ArrayList<Object> tripDataArray) {
 		// helper to display the final results of the trip
-		String modalMessageOne = String.format("This trip would take:\n %s hours\nor\n %s days\nor\n %s years", 
-				tripDataArray.get(3), tripDataArray.get(4), tripDataArray.get(5));
+		String modalMessageOne = String.format("This trip would take:\n %.2f hours\nor\n %.2f days\nor\n %.2f years\n"
+												+ "There is/are\n %.2f\n crew members being paid\n $%.2f\nor\n€%.2fs\n for this trip.", 
+				tripDataArray.get(3), tripDataArray.get(4), tripDataArray.get(5), tripDataArray.get(6), tripDataArray.get(7), tripDataArray.get(8));
 		pd.showModalDialog(modalMessageOne);
 	}
 	
 	public static void main(String[] args) {
 		
-		// Trip 1
+		// Trip #1 --------------
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
-		ArrayList<String> tripOneDataArray = calculateTrip(pd);
-		String csvStringOne = makeCSVString(tripOneDataArray);
-		formatLogger(csvStringOne);
-		displayTripModalDialog(pd, tripOneDataArray);
+		ArrayList<Object> tripOneDataArray = calculateTrip(pd);
+		String csvStringOne = TripFileIO.makeCSVString(tripOneDataArray);
+		log.formatLogger(csvStringOne);
+		displayTripModalDialog(pd, tripOneDataArray);	
 		
-		// Trip 2
+		// Trip #2 --------------
 		String newTripMessage = String.format("Trip 2 - Select next destination! We currently on %s and riding a %s", pd.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdSecondTrip = new PlanetaryDialog(newTripMessage);
-		ArrayList<String> tripTwoDataArray = calculateNextTrip(pdSecondTrip, pd);
-		String csvStringTwo = makeCSVString(tripTwoDataArray);
-		formatLogger(csvStringTwo);
+		ArrayList<Object> tripTwoDataArray = calculateNextTrip(pdSecondTrip, pd);
+		String csvStringTwo = TripFileIO.makeCSVString(tripTwoDataArray);
+		log.formatLogger(csvStringTwo);
 		displayTripModalDialog(pdSecondTrip, tripTwoDataArray);
 		
-		// Trip #3
+		// Trip #3 --------------
 		String newTripMessageThree = String.format("Trip 3 - Select next destination! We currently on %s and riding a %s", pdSecondTrip.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdFinalTrip = new PlanetaryDialog(newTripMessageThree);
-		ArrayList<String> tripThreeDataArray = calculateNextTrip(pdFinalTrip, pdSecondTrip);
-		String csvStringThree = makeCSVString(tripThreeDataArray);
-		formatLogger(csvStringThree);
+		ArrayList<Object> tripThreeDataArray = calculateNextTrip(pdFinalTrip, pdSecondTrip);
+		String csvStringThree = TripFileIO.makeCSVString(tripThreeDataArray);
+		log.formatLogger(csvStringThree);
 		displayTripModalDialog(pdFinalTrip, tripThreeDataArray);
 		
 		// Create a new *.csv file
-		String filepath = createCSVFile();
+		String filepath = TripFileIO.createCSVFile();
 		
         // Finally, write contents to the file
 		String csvHeaders="Starting Planet, Destination Planet, Distance (KM), Travel Time (hours), Travel Time (days), Travel Trime (years)";
         
-		writeToCSVFile(filepath, csvHeaders + "\n");
-        writeToCSVFile(filepath, csvStringOne+ "\n");
-        writeToCSVFile(filepath, csvStringTwo+ "\n");
-        writeToCSVFile(filepath, csvStringThree+ "\n");
+		TripFileIO.writeToCSVFile(filepath, csvHeaders + "\n");
+        TripFileIO.writeToCSVFile(filepath, csvStringOne+ "\n");
+        TripFileIO.writeToCSVFile(filepath, csvStringTwo+ "\n");
+        TripFileIO.writeToCSVFile(filepath, csvStringThree+ "\n");
 	}
 }
 
