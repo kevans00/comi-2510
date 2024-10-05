@@ -21,5 +21,9 @@ public class PlanetaryConstants {
 	public static final double MI_TO_KM_FACTOR = 1.6093;
 	
 	public static final double SPEED_OF_LIGHT = 1080000000; // km/hr
+	
+	public final static String RESOURCE_PATH = "src\\main\\resources\\in\\";
+	public final static String OUTPUT_PATH = "src\\main\\resources\\out\\";
+	public static final double MAXIMUM_PAY = 1000000;
 
 }

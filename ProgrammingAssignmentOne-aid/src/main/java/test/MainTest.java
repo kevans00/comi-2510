@@ -24,15 +24,13 @@ import planets.util.TripFileIO;
 import planets.util.PlanetaryConversions;
 
 public class MainTest {
-	private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
+	// private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
 
-	public static final String RESOURCE_PATH = "src\\main\\resources\\in\\";
-	public static final String OUTPUT_PATH = "src\\main\\resources\\out\\";
+	
 	public static final String PLANET_CSV_FILE = "planet_details.csv";
 	public static final String VEHICLE_CSV_FILE = "vehicle_details.csv";
 	public static final String DELIMITER = ",";
-	public static final int MIN_FILE_NUMBER = 1;
-	public static final int MAX_FILE_NUMBER = 21;	
+		
 
 	public static String resourceFolderAbsPath = new File(PlanetaryConstants.RESOURCE_PATH).getAbsolutePath();
 	public static String outputFolderAbsPath = new File(PlanetaryConstants.OUTPUT_PATH).getAbsolutePath();
