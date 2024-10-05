@@ -54,7 +54,8 @@ public class PlanetaryBodyReader {
 				tempArr = line.split(delimiter);
 				String classification = tempArr[1];
 				PlanetaryBodyReader.logger.debug("Classification has " + classification);
-
+				
+				//Create Planetary Body object based on classification
 				if (classification.contains("Dwarf")) {
 					PlanetaryBodyReader.logger.debug("Creating Dwarf planet object");
 
@@ -119,7 +120,7 @@ public class PlanetaryBodyReader {
 				try
 				{
 					ln.close();
-				} catch (IOException ioe)
+				} catch (IOException ioe)	//ToDo: Fix exception here
 				{
 					ioe.printStackTrace();
 				}
@@ -127,15 +128,6 @@ public class PlanetaryBodyReader {
 		}
 		return list;
 	}	
-	
-	//Read the entries;
-		//input must be list (could this be something else?)
-		//for entry i, check "classification" attribute 
-		//if classification == air || land || sea
-			//assign proper child class
-	
-	//Classify the entries
-	
 	
 	public static void loadPlanetNamesArray() {
 	}

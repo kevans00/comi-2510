@@ -2,6 +2,7 @@ package planets.planetai;
 
 public class DwarfPlanet extends PlanetaryBody {
 	
+	private double DRAG_COEFFICIENT_CONST = 0.35;
 	/**
 	 * Constructor to set the values
 	 * @param name
@@ -22,5 +23,15 @@ public class DwarfPlanet extends PlanetaryBody {
 		super(name, classification, diameter, weight, distanceEarth, distanceSun,
 				orbitalecc, albedo, dayLength, yearLength);
 		}
+	
+	/**
+	 * This method gets the Dwarf Planet drag coefficient
+	 * @return dragCoefficient
+	 */
+	@Override
+	public double getDragCoefficient() {
+		double dragCoefficient = DRAG_COEFFICIENT_CONST + this.getDragCoefficientBase();
+		return dragCoefficient;
+	}
 
 }

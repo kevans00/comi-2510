@@ -1,10 +1,11 @@
 package planets.planetai;
 
+import edu.ccri.assignment.planets.data.DataAccessOperations;
 
   /**
    * This class creates a PlanetaryBody object with all PlanetaryBody values
    */
-public class PlanetaryBody {
+public abstract class PlanetaryBody {
 	String planetName;
 	String planetClassification;
 	double diameter;
@@ -205,7 +206,10 @@ public class PlanetaryBody {
 		this.setYearLength(yearLength);
 	}
 	
-	//public String toString() {
-	//}
+	protected double getDragCoefficientBase() {
+		double dragCoefficientBase = this.albedo * this.orbitalecc;
+		return dragCoefficientBase;
+	}
 	
+	public abstract double getDragCoefficient();
 }

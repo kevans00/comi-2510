@@ -2,6 +2,8 @@ package planets.planetai;
 
 public class Moon extends PlanetaryBody {
 
+	private double DRAG_COEFFICIENT_CONST = 0.75;
+	
 	/**
 	 * Constructor to set values
 	 * @param name
@@ -21,5 +23,14 @@ public class Moon extends PlanetaryBody {
 		
 		super(name, classification, diameter, weight, distanceEarth, distanceSun,
 				orbitalecc, albedo, dayLength, yearLength);
+	}
+	
+	/**
+	 * This method gets the Dwarf Planet drag coefficient
+	 */
+	@Override
+	public double getDragCoefficient() {
+		double dragCoefficient = DRAG_COEFFICIENT_CONST + this.getDragCoefficientBase();
+		return dragCoefficient;
 	}
 }
