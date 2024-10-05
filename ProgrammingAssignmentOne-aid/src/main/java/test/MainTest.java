@@ -12,10 +12,12 @@ import org.apache.logging.log4j.Logger;
 import org.apache.commons.lang3.exception.*;
 
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
-import planets.transportation.TransportationVehicle;
-import planets.transportation.TransportationVehicleReader;
+
+import planets.data.ExcelFileIO;
 import planets.planetai.PlanetaryBody;
 import planets.planetai.PlanetaryBodyReader;
+import planets.transportation.TransportationVehicle;
+import planets.transportation.TransportationVehicleReader;
 import planets.util.PlanetaryConstants;
 import planets.util.TravelCalculator;
 import planets.util.CrewCalculator;
@@ -46,8 +48,10 @@ public class MainTest {
 	static TravelCalculator tc = new TravelCalculator();
 	static EasyDebugLogger log = new EasyDebugLogger();
 	static TripFileIO io = new TripFileIO();
+	//static ExcelFileIO excel = new ExcelFileIO();
 	static CrewCalculator cc = new CrewCalculator();
 	static PlanetaryConversions pc = new PlanetaryConversions();
+	
 	
 	public static String[] getPlanetData() {
 		
@@ -113,7 +117,11 @@ public class MainTest {
 	}
 	
 	
-	public static ArrayList<Object> doActualCalculations(TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody) {
+	public static ArrayList<Object> calculateTripData(ArrayList<Object> dialogSelections) {
+		//TransportationVehicle vehicle, PlanetaryBody startingPlanetaryBody, PlanetaryBody destPlanetaryBody
+		TransportationVehicle vehicle = (TransportationVehicle)dialogSelections.get(0);
+		PlanetaryBody startingPlanetaryBody = (PlanetaryBody)dialogSelections.get(1);
+		PlanetaryBody destPlanetaryBody = (PlanetaryBody)dialogSelections.get(2);
 		
 		if (startingPlanetaryBody.getPlanetName() == destPlanetaryBody.getPlanetName()) { //ToDo: Fix bug here; startingPlanetaryBody is null
 			double distance = TravelCalculator.calculateRelativeDistance(startingPlanetaryBody, destPlanetaryBody);
@@ -190,20 +198,18 @@ public class MainTest {
 		return tripDataArray;
 	}
 	
-	public static ArrayList<Object> calculateTrip(PlanetaryDialog pd) {
+	public static ArrayList<Object> getInitialDialogOptions(PlanetaryDialog pd) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
 		pd.setUseTransporationVehicle();
 		pd.setUseStartingPlanet();
 		pd.setUseDestinationPlanet();
-		
 		pd.showMultiEditDialog(planetData, vehicleData);
 		
 		String chosenVehicle = pd.getTransportationVechicleName();
 		String startingPlanetName = pd.getStartingPlanetName();
 		String destPlanetName = pd.getDestinationPlanetName();
-		
 		
 		// Create objects for the chosen vehicle and bodies
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
@@ -214,13 +220,18 @@ public class MainTest {
 		
 		log.formatLogger("Chosen vehicle: %s; starting planet %s; ending %s; crew members %s", chosenVehicle, startingPlanetName, destPlanetName, crewMembers);
 
-		ArrayList<Object> tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+		ArrayList<Object> tripDataArray = new ArrayList<Object>();
+		
+		tripDataArray.add(vehicle);
+		tripDataArray.add(startingPlanetaryBody);
+		tripDataArray.add(destPlanetaryBody);
 
+		
 		// ToDo: Handle the stop button
 		return tripDataArray;
 	}
 	
-	public static ArrayList<Object> calculateNextTrip(PlanetaryDialog pd, PlanetaryDialog pdPrevious) {
+	public static ArrayList<Object> getNextDialogOptions(PlanetaryDialog pd, PlanetaryDialog pdPrevious) {
 		String[] planetData = getPlanetData();
 		String[] vehicleData = getVehicleData();
 		
@@ -238,10 +249,17 @@ public class MainTest {
 		TransportationVehicle vehicle = getVehicle(chosenVehicle);
 		PlanetaryBody startingPlanetaryBody = getPlanet(startingPlanetName);
 		PlanetaryBody destPlanetaryBody = getPlanet(destPlanetName);
-		log.formatLogger("Trip 2 - Chosen vehicle: %s; starting planet %s; ending %s", chosenVehicle, startingPlanetName, destPlanetName);
 		
-		ArrayList<Object> tripDataArray = doActualCalculations(vehicle, startingPlanetaryBody, destPlanetaryBody);
+		double crewMembers = vehicle.getCrew();
+		
+		log.formatLogger("Chosen vehicle: %s; starting planet %s; ending %s; crew members %s", chosenVehicle, startingPlanetName, destPlanetName, crewMembers);
 
+		ArrayList<Object> tripDataArray = new ArrayList<Object>();
+		
+		tripDataArray.add(vehicle);
+		tripDataArray.add(startingPlanetaryBody);
+		tripDataArray.add(destPlanetaryBody);
+		
 		// ToDo: Handle the stop button
 		return tripDataArray;
 	}
@@ -259,7 +277,9 @@ public class MainTest {
 		
 		// Trip #1 --------------
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
-		ArrayList<Object> tripOneDataArray = calculateTrip(pd);
+		ArrayList<Object> dialogSelections = getInitialDialogOptions(pd);		
+		ArrayList<Object> tripOneDataArray = calculateTripData(dialogSelections);
+		
 		String csvStringOne = TripFileIO.makeCSVString(tripOneDataArray);
 		log.formatLogger(csvStringOne);
 		displayTripModalDialog(pd, tripOneDataArray);	
@@ -267,7 +287,9 @@ public class MainTest {
 		// Trip #2 --------------
 		String newTripMessage = String.format("Trip 2 - Select next destination! We currently on %s and riding a %s", pd.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdSecondTrip = new PlanetaryDialog(newTripMessage);
-		ArrayList<Object> tripTwoDataArray = calculateNextTrip(pdSecondTrip, pd);
+		ArrayList<Object> dialogSelectionsTwo = getNextDialogOptions(pdSecondTrip, pd);
+		ArrayList<Object> tripTwoDataArray = calculateTripData(dialogSelectionsTwo);
+		
 		String csvStringTwo = TripFileIO.makeCSVString(tripTwoDataArray);
 		log.formatLogger(csvStringTwo);
 		displayTripModalDialog(pdSecondTrip, tripTwoDataArray);
@@ -275,7 +297,9 @@ public class MainTest {
 		// Trip #3 --------------
 		String newTripMessageThree = String.format("Trip 3 - Select next destination! We currently on %s and riding a %s", pdSecondTrip.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdFinalTrip = new PlanetaryDialog(newTripMessageThree);
-		ArrayList<Object> tripThreeDataArray = calculateNextTrip(pdFinalTrip, pdSecondTrip);
+		ArrayList<Object> dialogSelectionsThree = getNextDialogOptions(pdFinalTrip, pdSecondTrip);
+		ArrayList<Object> tripThreeDataArray = calculateTripData(dialogSelectionsThree);
+		
 		String csvStringThree = TripFileIO.makeCSVString(tripThreeDataArray);
 		log.formatLogger(csvStringThree);
 		displayTripModalDialog(pdFinalTrip, tripThreeDataArray);
