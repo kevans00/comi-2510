@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.commons.lang3.exception.*;
 
+import edu.ccri.assignment.files.poi.PoiElementData;
 import edu.ccri.assignment.planets.test.dialog.PlanetaryDialog;
 
 import planets.data.ExcelFileIO;
@@ -27,13 +28,11 @@ import planets.util.PlanetaryConversions;
 
 public class MainTest {
 	// private static final Logger logger = LogManager.getLogger(MainTest.class.getName());
-
 	
 	public static final String PLANET_CSV_FILE = "planet_details.csv";
 	public static final String VEHICLE_CSV_FILE = "vehicle_details.csv";
 	public static final String DELIMITER = ",";
 		
-
 	public static String resourceFolderAbsPath = new File(PlanetaryConstants.RESOURCE_PATH).getAbsolutePath();
 	public static String outputFolderAbsPath = new File(PlanetaryConstants.OUTPUT_PATH).getAbsolutePath();
 	public static File planetFile = new File(resourceFolderAbsPath, PLANET_CSV_FILE);
@@ -273,47 +272,59 @@ public class MainTest {
 		pd.showModalDialog(modalMessageOne);
 	}
 	
+	private static ArrayList<Object> makeHeaders(){
+		ArrayList<Object> headers = new ArrayList<Object>();
+		headers.add("Starting Planet");
+		headers.add("Destination Planet");
+		headers.add("Distance (KM)");
+		headers.add("Travel Time (hours)");
+		headers.add("Travel Time (days)");
+		headers.add("Travel Time (years)");
+		headers.add("Total Crew Members");
+		headers.add("Total Crew Salary ($)");
+		headers.add("Total Crew Salary (€)");
+		return headers;
+	}
 	public static void main(String[] args) {
 		
+		// Open import Excel File
+        ExcelFileIO ex = new ExcelFileIO();
+        ex.readFileDetails();
+        
+        // Create a new ArrayList "lists of lists" for *.xlsx file
+        ArrayList<Object> headers = makeHeaders();
+        ArrayList<ArrayList<Object>> dataList = new ArrayList<ArrayList<Object>>();
+        dataList.add(headers);
+        
 		// Trip #1 --------------
 		PlanetaryDialog pd = new PlanetaryDialog("Get ready for liftoff! Choose your ride, your starting location, and destination!");
 		ArrayList<Object> dialogSelections = getInitialDialogOptions(pd);		
-		ArrayList<Object> tripOneDataArray = calculateTripData(dialogSelections);
 		
-		String csvStringOne = TripFileIO.makeCSVString(tripOneDataArray);
-		log.formatLogger(csvStringOne);
+		ArrayList<Object> tripOneDataArray = calculateTripData(dialogSelections);
+		dataList.add(tripOneDataArray);
 		displayTripModalDialog(pd, tripOneDataArray);	
 		
 		// Trip #2 --------------
 		String newTripMessage = String.format("Trip 2 - Select next destination! We currently on %s and riding a %s", pd.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdSecondTrip = new PlanetaryDialog(newTripMessage);
 		ArrayList<Object> dialogSelectionsTwo = getNextDialogOptions(pdSecondTrip, pd);
-		ArrayList<Object> tripTwoDataArray = calculateTripData(dialogSelectionsTwo);
 		
-		String csvStringTwo = TripFileIO.makeCSVString(tripTwoDataArray);
-		log.formatLogger(csvStringTwo);
+		ArrayList<Object> tripTwoDataArray = calculateTripData(dialogSelectionsTwo);
+		dataList.add(tripTwoDataArray);
 		displayTripModalDialog(pdSecondTrip, tripTwoDataArray);
 		
 		// Trip #3 --------------
 		String newTripMessageThree = String.format("Trip 3 - Select next destination! We currently on %s and riding a %s", pdSecondTrip.getDestinationPlanetName(), pd.getTransportationVechicleName());
 		PlanetaryDialog pdFinalTrip = new PlanetaryDialog(newTripMessageThree);
 		ArrayList<Object> dialogSelectionsThree = getNextDialogOptions(pdFinalTrip, pdSecondTrip);
+		
 		ArrayList<Object> tripThreeDataArray = calculateTripData(dialogSelectionsThree);
-		
-		String csvStringThree = TripFileIO.makeCSVString(tripThreeDataArray);
-		log.formatLogger(csvStringThree);
+		dataList.add(tripThreeDataArray);
 		displayTripModalDialog(pdFinalTrip, tripThreeDataArray);
-		
-		// Create a new *.csv file
-		String filepath = TripFileIO.createCSVFile();
-		
-        // Finally, write contents to the file
-		String csvHeaders="Starting Planet, Destination Planet, Distance (KM), Travel Time (hours), Travel Time (days), Travel Trime (years)";
-        
-		TripFileIO.writeToCSVFile(filepath, csvHeaders + "\n");
-        TripFileIO.writeToCSVFile(filepath, csvStringOne+ "\n");
-        TripFileIO.writeToCSVFile(filepath, csvStringTwo+ "\n");
-        TripFileIO.writeToCSVFile(filepath, csvStringThree+ "\n");
+	
+		// Finally, add `dataList` to Excel Output
+		String worksheet = "Trip Summary";
+        ExcelFileIO.excelOutputResults(dataList, worksheet);
 	}
 }
 
